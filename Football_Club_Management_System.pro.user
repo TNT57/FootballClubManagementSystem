@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.0, 2024-05-10T02:09:29. -->
+<!-- Written by QtCreator 13.0.0, 2024-05-10T15:43:40. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -241,10 +241,10 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/University of Adelaide/COMP SCI 1102/Football_Club_Management_System/Football_Club_Management_System.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/University of Adelaide/COMP SCI 1102/Football_Club_Management_System/Football_Club_Management_System.pro</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Football_Club_Management_System2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/University of Adelaide/COMP SCI 1102/Project-Cpp-OOP/Football_Club_Management_System.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/University of Adelaide/COMP SCI 1102/Project-Cpp-OOP/Football_Club_Management_System.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

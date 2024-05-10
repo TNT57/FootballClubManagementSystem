@@ -9,7 +9,6 @@ MatchFixture::MatchFixture(QWidget *parent)
     ptrDateSelected = new DateSelected();
     ptrAddMatchFixture = new AddMatchFixture();
     ptrRemoveMatchFixture = new RemoveMatchFixture();
-    ptrMatches = new QVector<QVector<QString>>();
 }
 
 MatchFixture::~MatchFixture()
@@ -18,12 +17,8 @@ MatchFixture::~MatchFixture()
     delete ptrDateSelected;
     delete ptrAddMatchFixture;
     delete ptrRemoveMatchFixture;
-    delete ptrMatches;
 }
 
-QVector<QVector<QString>> *MatchFixture::get_ptrMatches() {
-    return ptrMatches;
-}
 
 
 

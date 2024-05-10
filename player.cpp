@@ -1,23 +1,25 @@
 #include "player.h"
-#include "ui_player.h"
 
-Player::Player(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Player)
-{
-    ui->setupUi(this);
-    loadAllPlayer();
+Player::Player(QWidget *parent) : TeamList(parent){
+    loadPlayer();
 }
-
-Player::~Player()
-{
-    delete ui;
-}
-// load and show the table of player data
-void Player :: loadAllPlayer(){
-     QSqlDatabase database = QSqlDatabase::database("DB1");
-    if (model == nullptr)
+void Player:: loadPlayer(){
+    QSqlDatabase db = QSqlDatabase::database("DB1");
         model = new QSqlQueryModel();
-     model->setQuery("SELECT * FROM Player", database);
-    ui->tableView->setModel(model); // Show the database table in the table view
+
+    model->setQuery("SELECT * FROM Player", db);
+    ui->tableView->setModel(model);
+
+}
+Player :: ~Player(){
+    delete ui;
+    delete ptrAddPlayer;
+}
+void Player::addPeople(){
+    ptrAddPlayer = new AddPlayer();
+    ptrAddPlayer -> setWindowTitle("Add player");
+    ptrAddPlayer -> show();
+}
+void Player::reloadPeople(){
+    loadPlayer();
 }

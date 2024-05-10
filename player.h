@@ -1,26 +1,23 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <QSqlDatabase>
-#include <QWidget>
-#include <QSqlQuery>
-#include <QSqlTableModel>
-
-namespace Ui {
-class Player;
-}
-
-class Player : public QWidget
+#include "teamlist.h"
+#include "ui_teamlist.h"
+#include "addplayer.h"
+class Player : public TeamList
 {
-    Q_OBJECT
-
 public:
-    explicit Player(QWidget *parent = nullptr);
+    // constructor to inherit the ui from the teamlist class
+    Player(QWidget *parent = nullptr);
+     void addPeople();
+   // void removePeople();
+   // void editPeople();
+    void loadPlayer();
+     void reloadPeople();
     ~Player();
-    void loadAllPlayer(); // load all the player in the database
 
 private:
-    Ui::Player *ui;
     QSqlQueryModel *model;
+    AddPlayer* ptrAddPlayer;
 };
 
 #endif // PLAYER_H

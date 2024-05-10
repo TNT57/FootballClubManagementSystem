@@ -21,7 +21,6 @@ class Navigator : public QMainWindow
 
 public:
     Navigator(QWidget *parent = nullptr);
-    MatchFixture *get_ptrMatchFixture();
     ~Navigator();
 
 private slots:

@@ -9,12 +9,14 @@ People::People(QWidget *parent)
     ui->setupUi(this);
     ptrPlayer = new Player();
     ptrStaff = new Staff();
+
 }
 
 People::~People()
 {
     delete ui;
     delete ptrPlayer;
+    delete ptrStaff;
 }
 
 void People::on_playerButton_clicked()

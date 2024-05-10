@@ -32,7 +32,6 @@ private:
     DateSelected *ptrDateSelected;
     AddMatchFixture *ptrAddMatchFixture;
     RemoveMatchFixture *ptrRemoveMatchFixture;
-    QVector<QVector<QString>> *ptrMatches;
 };
 
 #endif // MATCHFIXTURE_H

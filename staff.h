@@ -1,22 +1,22 @@
 #ifndef STAFF_H
 #define STAFF_H
+#include "teamlist.h"
+#include "ui_teamlist.h"
+#include "addstaff.h"
 
-#include <QWidget>
-
-namespace Ui {
-class Staff;
-}
-
-class Staff : public QWidget
+class Staff : public TeamList
 {
-    Q_OBJECT
-
 public:
-    explicit Staff(QWidget *parent = nullptr);
+    Staff(QWidget *parent = nullptr);
+    void addPeople();
+    // void removePeople();
+    // void editPeople();
+    void loadStaff();
+    void reloadPeople();
     ~Staff();
-
 private:
-    Ui::Staff *ui;
+    AddStaff* ptrAddStaff;
+    QSqlQueryModel *model;
 };
 
 #endif // STAFF_H

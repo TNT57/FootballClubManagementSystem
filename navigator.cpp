@@ -10,9 +10,8 @@ Navigator::Navigator(QWidget *parent)
     ui->setupUi(this);
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\Football_Club_Management_System\\PlayerManagement.db");
+    database.setDatabaseName("test.db");
     // ae tu sua dia chi database theo may minh nhe
-    ///Users/tom/Documents/PlayerManagement.db
 
     // check the database is working or not
     if(!database.open()){
@@ -37,10 +36,6 @@ Navigator::~Navigator()
 
 }
 
-MatchFixture *Navigator::get_ptrMatchFixture() {
-    return ptrMatchFixture;
-}
-
 // open people management feature
 void Navigator::on_peopleButton_clicked()
 {
@@ -54,6 +49,7 @@ void Navigator::on_matchButton_clicked()
     ptrMatchFixture -> setWindowTitle("Match Fixture");
     ptrMatchFixture -> show();
 }
+
 
 void Navigator::on_teamButton_clicked()
 {

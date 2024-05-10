@@ -22,7 +22,6 @@ private slots:
 
 private:
     Ui::AddMatchFixture *ui;
-    QSqlDatabase database;
 };
 
 #endif // ADDMATCHFIXTURE_H

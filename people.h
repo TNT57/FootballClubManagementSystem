@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "player.h"
 #include "staff.h"
+
 namespace Ui {
 class People;
 }
@@ -26,6 +27,7 @@ private:
     Ui::People *ui;
     Player *ptrPlayer;
     Staff *ptrStaff;
+
 };
 
 #endif // PEOPLE_H

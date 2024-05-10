@@ -14,34 +14,41 @@ SOURCES += \
     dateselected.cpp \
     main.cpp \
     matchfixture.cpp \
-    navigator.cpp \
-    people.cpp \
     removematchfixture.cpp \
+    teamstatistics.cpp \
+    teamlist.cpp \
     staff.cpp \
     player.cpp \
-    teamstatistics.cpp
+    people.cpp \
+    navigator.cpp \
+    addplayer.cpp\
+    addstaff.cpp
 
 HEADERS += \
     addmatchfixture.h \
     dateselected.h \
     matchfixture.h \
-    navigator.h \
-    people.h \
     removematchfixture.h \
+    teamstatistics.h \
+    teamlist.h \
     staff.h \
     player.h \
-    teamstatistics.h
+    people.h \
+    navigator.h \
+    addplayer.h \
+    addstaff.h
 
 FORMS += \
     addmatchfixture.ui \
     dateselected.ui \
     matchfixture.ui \
-    navigator.ui \
-    people.ui \
     removematchfixture.ui \
-    staff.ui \
-    player.ui \
-    teamstatistics.ui
+    teamstatistics.ui \
+    teamlist.ui \
+    people.ui \
+    navigator.ui \
+    addplayer.ui \
+    addstaff.ui
 
 
 # Default rules for deployment.
