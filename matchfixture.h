@@ -16,7 +16,6 @@ class MatchFixture: public QWidget
     Q_OBJECT
 public:
     explicit MatchFixture(QWidget *parent = nullptr);
-    QVector<QVector<QString>> *get_ptrMatches();
     ~MatchFixture();
 
 private slots:

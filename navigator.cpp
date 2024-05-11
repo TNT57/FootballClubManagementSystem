@@ -10,7 +10,7 @@ Navigator::Navigator(QWidget *parent)
     ui->setupUi(this);
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    database.setDatabaseName("test.db");
+    database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\Project-Cpp-OOP\\PlayerManagement.db");
     // ae tu sua dia chi database theo may minh nhe
 
     // check the database is working or not
@@ -31,6 +31,7 @@ Navigator::~Navigator()
     delete ui;
     delete ptrPeople;
     delete ptrMatchFixture;
+    delete ptrTeamStatistics;
     database.close();
     QSqlDatabase::removeDatabase(database.connectionName());
 

@@ -43,7 +43,7 @@ void MatchFixture::on_calendarMatchFixture_clicked(const QDate &date)
 {
     ptrDateSelected -> setWindowTitle("Match Day");
     ptrDateSelected -> show();
-    ptrDateSelected->fetchMatchData(date);
+    ptrDateSelected -> fetchMatchData(date);
 
 }
 

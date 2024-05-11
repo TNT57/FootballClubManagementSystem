@@ -18,7 +18,7 @@ AddMatchFixture::~AddMatchFixture()
 void AddMatchFixture::on_confirmButton_clicked()
 {
     QDate date = ui -> dateEdit -> date();
-    QString formattedDate = date.toString("yyyy-MM-dd"); // Change date format to "yyyy-MM-dd"
+    QString formattedDate = date.toString("dd/MM/yyyy");
     QString time = ui -> timeEdit -> text();
     QString opponentTeamName = ui -> opponentTeamNameEdit -> text();
     QString location = ui -> locationEdit -> text();
@@ -36,8 +36,8 @@ void AddMatchFixture::on_confirmButton_clicked()
     } else {
         QMessageBox::information(this, "Add successfully",
                                  "Date: " + formattedDate + "\n" +
-                                     "Time: " + time + "\n" +
-                                     "Opponent Team Name: " + opponentTeamName + "\n"
-                                                                                 "Location: " + location + "\n");
+                                 "Time: " + time + "\n" +
+                                 "Opponent Team Name: " + opponentTeamName + "\n"
+                                 "Location: " + location + "\n");
     }
 }
