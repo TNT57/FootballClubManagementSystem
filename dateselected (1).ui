@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MatchFixture</class>
- <widget class="QWidget" name="MatchFixture">
+ <class>DateSelected</class>
+ <widget class="QWidget" name="DateSelected">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,53 +13,56 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="addMatchFixtureButton">
+  <widget class="QLabel" name="dateLabel">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>190</y>
-     <width>91</width>
-     <height>31</height>
+     <x>60</x>
+     <y>50</y>
+     <width>241</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Add</string>
+    <string>Date:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="removeMatchFixtureButton">
+  <widget class="QLabel" name="timeLabel">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>190</y>
-     <width>91</width>
-     <height>31</height>
+     <x>60</x>
+     <y>70</y>
+     <width>241</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Remove</string>
+    <string>Time:</string>
    </property>
   </widget>
-  <widget class="QCalendarWidget" name="calendarMatchFixture">
+  <widget class="QLabel" name="opponentTeamNameLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>381</width>
-     <height>171</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="reloadMatchFixture">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>240</y>
-     <width>80</width>
-     <height>18</height>
+     <x>60</x>
+     <y>90</y>
+     <width>231</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>Reload</string>
+    <string>Opponent Team Name:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="locationLabel">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>110</y>
+     <width>221</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Location:</string>
    </property>
   </widget>
  </widget>

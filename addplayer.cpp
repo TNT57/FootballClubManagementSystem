@@ -61,6 +61,8 @@ bool AddPlayer::validateInput() {
     QString app = ui->appLineEdit->text();
     QString goal = ui->goalLineEdit->text();
     QString assist = ui->assistLineEdit->text();
+    QString yellow = ui->yellowLineEdit->text();
+    QString red = ui->redLineEdit->text();
     QString cleanSheet;
     QString passPer90 = ui->passLineEdit->text();
     QString tacklePer90 = ui->tackleLineEdit->text();
@@ -68,6 +70,20 @@ bool AddPlayer::validateInput() {
     QString savePer90;
     QString saveRate;
 
+    // all lines must be filled
+    QStringList stats = {app, goal, assist, yellow, red, passPer90, tacklePer90, dribblePer90};
+     if (ui->positionComboBox->currentText() == "GK"){
+        cleanSheet = ui->cleanSheet->text();
+        savePer90 = ui->savePer90LineEdit->text();
+        saveRate = ui->saveRateLineEdit->text();
+        stats << cleanSheet<< savePer90 << saveRate;
+    }
+    for (const QString &stat : stats){
+        if (stat.trimmed().isEmpty()){
+            QMessageBox::warning(this, "Input error", "All stats fields must be filled");
+            return false;
+        }
+    }
     // ShirtNumber should be unique and integer only
     bool ok;
     int shirtNumberValue = shirtNumber.toInt(&ok);
@@ -93,14 +109,14 @@ bool AddPlayer::validateInput() {
     }
 
     // App, Goal, Assist, CleanSheet must be positive integer numbers
-    QStringList positiveIntegers = {app, goal, assist};
+    QStringList positiveIntegers = {app, goal, assist, red, yellow};
     if (position == "GK"){
         cleanSheet = ui->cleanSheet->text();
         positiveIntegers << cleanSheet;
     }
     for (const QString &str : positiveIntegers) {
         int num = str.toInt(&ok);
-       if (ok && num > 0){
+       if (ok && num >= 0){
              qDebug() << "The input is a positive integer: " << num;
        } else {
             QMessageBox::critical(this, "Invalid Input", "App, Goal, Assist, and CleanSheet must be positive integers");
@@ -117,7 +133,7 @@ bool AddPlayer::validateInput() {
     }
     for (const QString &str : positiveNumbers) {
         double num = str.toDouble(&ok);
-        if (ok && num > 0){
+        if (ok && num >= 0){
             qDebug() << "The input is a positive number: " << num;
         } else {
             QMessageBox::critical(this, "Invalid Input", "PassPer90, TacklePer90, DribblePer90, SavePer90, and SaveRate must be positive numbers");
@@ -132,6 +148,7 @@ bool AddPlayer::validateInput() {
 
 void AddPlayer::on_positionComboBox_currentTextChanged(const QString &position)
 {
+    // show the specific stat of gk if user choose gk
     if (position == "GK"){
         ui->savePer90LineEdit->show();
         ui->cleanSheet->show();

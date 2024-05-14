@@ -12,9 +12,13 @@ CONFIG += c++17
 SOURCES += \
     addmatchfixture.cpp \
     dateselected.cpp \
+    editplayer.cpp \
+    editstaff.cpp \
     main.cpp \
     matchfixture.cpp \
     removematchfixture.cpp \
+    removeplayer.cpp \
+    removestaff.cpp \
     teamstatistics.cpp \
     teamlist.cpp \
     staff.cpp \
@@ -27,8 +31,12 @@ SOURCES += \
 HEADERS += \
     addmatchfixture.h \
     dateselected.h \
+    editplayer.h \
+    editstaff.h \
     matchfixture.h \
     removematchfixture.h \
+    removeplayer.h \
+    removestaff.h \
     teamstatistics.h \
     teamlist.h \
     staff.h \
@@ -41,8 +49,12 @@ HEADERS += \
 FORMS += \
     addmatchfixture.ui \
     dateselected.ui \
+    editplayer.ui \
+    editstaff.ui \
     matchfixture.ui \
     removematchfixture.ui \
+    removeplayer.ui \
+    removestaff.ui \
     teamstatistics.ui \
     teamlist.ui \
     people.ui \

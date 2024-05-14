@@ -20,6 +20,16 @@ void Staff :: addPeople(){
     ptrAddStaff -> setWindowTitle("Add staff");
     ptrAddStaff -> show();
 }
+void Staff :: editPeople(){
+    ptrEditStaff = new EditStaff();
+    ptrEditStaff -> setWindowTitle("Edit Staff");
+    ptrEditStaff -> show();
+}
+void Staff :: removePeople(){
+    ptrRemoveStaff = new RemoveStaff();
+    ptrRemoveStaff -> setWindowTitle("Remove staff");
+    ptrRemoveStaff -> show();
+}
 void Staff :: reloadPeople(){
     loadStaff();
 }

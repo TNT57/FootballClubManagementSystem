@@ -398,6 +398,42 @@
     <string>Save success percentage</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="saveRateLineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>560</y>
+     <width>201</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="confirmButton_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>600</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confirm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>560</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save success percentage</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

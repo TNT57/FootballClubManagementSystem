@@ -19,8 +19,8 @@ class TeamList : public QWidget
 public:
     explicit TeamList(QWidget *parent = nullptr);
     virtual void addPeople() = 0;
-   // virtual void removePeople() = 0;
-   // virtual void editPeople() = 0;
+   virtual void removePeople() = 0;
+    virtual void editPeople() = 0;
     virtual void reloadPeople() = 0;
     ~TeamList();
 

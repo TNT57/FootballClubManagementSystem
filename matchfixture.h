@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMessageBox>
+#include <QTextCharFormat>
 #include "dateselected.h"
 #include "addmatchfixture.h"
 #include "removematchfixture.h"
@@ -25,6 +26,8 @@ private slots:
     void on_removeMatchFixtureButton_clicked();
 
     void on_calendarMatchFixture_clicked(const QDate &date);
+
+    void on_reloadMatchFixture_clicked();
 
 private:
     Ui::MatchFixture *ui;

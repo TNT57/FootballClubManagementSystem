@@ -18,14 +18,11 @@ class AddPlayer : public QWidget
 
 public:
     explicit AddPlayer(QWidget *parent = nullptr);
-    void onPositionChanged(const QString position);
     bool validateInput();
     ~AddPlayer();
 
 private slots:
     void on_confirmButton_clicked();
-
-
 
     void on_positionComboBox_currentTextChanged(const QString &arg1);
 

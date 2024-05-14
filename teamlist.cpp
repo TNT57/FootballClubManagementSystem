@@ -23,13 +23,13 @@ void TeamList::on_addButton_clicked()
 
 void TeamList::on_removeButton_clicked()
 {
-  //  removePeople();
+    removePeople();
 }
 
 
 void TeamList::on_editButton_clicked()
 {
-  //  editPeople();
+    editPeople();
 }
 
 

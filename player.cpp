@@ -20,6 +20,16 @@ void Player::addPeople(){
     ptrAddPlayer -> setWindowTitle("Add player");
     ptrAddPlayer -> show();
 }
+void Player::editPeople(){
+    ptrEditPlayer = new EditPlayer();
+    ptrEditPlayer -> setWindowTitle("Edit player");
+    ptrEditPlayer -> show();
+}
 void Player::reloadPeople(){
     loadPlayer();
+}
+void Player::removePeople(){
+    ptrRemovePlayer = new RemovePlayer();
+    ptrRemovePlayer -> setWindowTitle("Remove Player");
+    ptrRemovePlayer -> show();
 }
