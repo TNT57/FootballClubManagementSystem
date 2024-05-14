@@ -25,7 +25,7 @@ TeamStatistics::~TeamStatistics()
 
 void TeamStatistics:: loadPlayerStats(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
+    db.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\PlayerManagement.db");
 
     if (!db.open()) {
         qDebug() << "Error: connection with database failed:" << db.lastError().text();

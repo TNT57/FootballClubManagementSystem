@@ -23,7 +23,8 @@ RemovePlayer::~RemovePlayer()
 
 void RemovePlayer::populatePlayers() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
+    //db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
+    db.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\PlayerManagement.db");
 
     // Check if the database is open or not
     if (db.open()) {
