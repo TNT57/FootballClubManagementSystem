@@ -19,6 +19,9 @@ public:
     ~DateSelected();
     void fetchMatchData(const QDate &date);
 
+private slots:
+    void on_teamListButton_clicked();
+
 private:
     Ui::DateSelected *ui;
 };
