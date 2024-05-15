@@ -10,8 +10,8 @@ Navigator::Navigator(QWidget *parent)
     ui->setupUi(this);
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    //database.setDatabaseName("E:\Workspace\FootballClubManagementSystem\PlayerManagement.db");
-    // ae tu sua dia chi database theo may minh nhe
+    //database.setDatabaseName("C:\Users\trung\Downloads\PlayerManagement.db");
+    //database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
     database.setDatabaseName("/Users/tom/PlayerManagement.db");
 
     // check the database is working or not

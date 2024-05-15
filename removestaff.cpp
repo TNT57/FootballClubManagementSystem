@@ -22,24 +22,27 @@ RemoveStaff::~RemoveStaff()
 }
 
 void RemoveStaff::populateStaff() {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
-    db.setDatabaseName("E:\\Workspace\\FootballClubManagementSystem\\PlayerManagement.db");
+    QSqlDatabase db = QSqlDatabase::database("DB1");
 
-    //Check if database is open
-    if (db.open()){
-        QSqlQuery query("Select StaffID, Name FROM Staff");
-        while (query.next()) {
-            int staffID = query.value(0).toInt(); // Convert to int
-            QString staffName = query.value(1).toString(); // Get the staff's name
-            QString staffInfo = QString::number(staffID) + " - " + staffName; // Concatenate shirt number and name
-            ui->staffNameComboBox->addItem(staffInfo); //Combine the string to the combo box
-        }
-
-    } else {
+    // Check if the database is open
+    if (!db.isOpen()) {
         qDebug() << "Database connection failed: ";
+        return;
     }
 
+    QSqlQuery query(db);
+
+    if (!query.exec("SELECT StaffID, Name FROM Staff")) {
+        qDebug() << "Query execution failed: " << query.lastError();
+        return;
+    }
+
+    while (query.next()) {
+        int staffID = query.value(0).toInt(); // Convert to int
+        QString staffName = query.value(1).toString(); // Get the staff's name
+        QString staffInfo = QString::number(staffID) + " - " + staffName; // Concatenate ID and name
+        ui->staffNameComboBox->addItem(staffInfo); // Add the combined string to the combo box
+    }
 }
 
 void RemoveStaff::on_staffRemoveConfirmButton_clicked()
@@ -48,7 +51,8 @@ void RemoveStaff::on_staffRemoveConfirmButton_clicked()
     QStringList infoParts = staffInfo.split(" - "); //Split the string into 2: staffID and Name
     if (infoParts.size() > 1) {
         int staffID = infoParts.at(0).toInt(); //StaffID is the first part of that string
-        QSqlQuery query;
+        QSqlDatabase db = QSqlDatabase::database("DB1");
+        QSqlQuery query(db);
         query.prepare("DELETE FROM Staff WHERE StaffID = :staffID");
         query.bindValue(":staffID", staffID);
 

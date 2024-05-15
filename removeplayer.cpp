@@ -22,31 +22,35 @@ RemovePlayer::~RemovePlayer()
 }
 
 void RemovePlayer::populatePlayers() {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
-    db.setDatabaseName("E:\\Workspace\\FootballClubManagementSystem\\PlayerManagement.db");
+    QSqlDatabase db = QSqlDatabase::database("DB1");
 
-    // Check if the database is open or not
-    if (db.open()) {
-        QSqlQuery query("SELECT ShirtNumber, Name FROM Player");
-        while (query.next()) {
-            int playerShirtNumber = query.value(0).toInt(); // Convert to int
-            QString playerName = query.value(1).toString(); // Get the player's name
-            QString playerInfo = QString::number(playerShirtNumber) + " - " + playerName; // Concatenate shirt number and name
-            ui->playerNameComboBox->addItem(playerInfo); // Add the combined string to the combo box
-        }
-    } else {
+    if (!db.isOpen()) {
         qDebug() << "Database connection failed: ";
+        return;
+    }
+
+    QSqlQuery query(db);
+
+    if (!query.exec("SELECT ShirtNumber, Name FROM Player")) {
+        qDebug() << "Query execution failed: " << query.lastError();
+        return;
+    }
+
+    while (query.next()) {
+        int playerShirtNumber = query.value(0).toInt(); // Convert to int
+        QString playerName = query.value(1).toString(); // Get the player's name
+        QString playerInfo = QString::number(playerShirtNumber) + " - " + playerName; // Concatenate shirt number and name
+        ui->playerNameComboBox->addItem(playerInfo); // Add the combined string to the combo box
     }
 }
-
 
 void RemovePlayer::on_confirmButton_clicked() {
     QString playerInfo = ui->playerNameComboBox->currentText();
     QStringList infoParts = playerInfo.split(" - "); // Split the string to extract the shirt number and name
     if (infoParts.size() > 1) {
         int playerShirtNumber = infoParts.at(0).toInt(); // The player's shirt number is the first part
-        QSqlQuery query;
+        QSqlDatabase db = QSqlDatabase::database("DB1");
+        QSqlQuery query(db);
         query.prepare("DELETE FROM Player WHERE ShirtNumber = :shirtNumber");
         query.bindValue(":shirtNumber", playerShirtNumber);
         if (query.exec()) {

@@ -24,18 +24,21 @@ TeamStatistics::~TeamStatistics()
 //float teamAVGPass, teamAVGTackle, teamAVGDribble;
 
 void TeamStatistics:: loadPlayerStats(){
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("E:\\Workspace\\FootballClubManagementSystem\\PlayerManagement.db");
+    QSqlDatabase db = QSqlDatabase::database("DB1");
 
-    if (!db.open()) {
+    // Check if the database is open
+    if (!db.isOpen()) {
         qDebug() << "Error: connection with database failed:" << db.lastError().text();
         return;
     } else {
         qDebug() << "Database: connection ok";
     }
 
-    //Insert value for Goals box
+    // Insert value for Goals box
     QSqlQuery query(db);
+
+
+    // Process the results of your query here
     query.prepare("SELECT Goals FROM Player");
     int teamNumGoals = 0; // Initialize the team goals counter
     if (query.exec()) { // Execute the query
