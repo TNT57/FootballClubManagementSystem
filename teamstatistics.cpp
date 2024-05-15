@@ -25,7 +25,7 @@ TeamStatistics::~TeamStatistics()
 
 void TeamStatistics:: loadPlayerStats(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\PlayerManagement.db");
+    db.setDatabaseName("E:\\Workspace\\FootballClubManagementSystem\\PlayerManagement.db");
 
     if (!db.open()) {
         qDebug() << "Error: connection with database failed:" << db.lastError().text();
@@ -118,7 +118,8 @@ void TeamStatistics:: loadPlayerStats(){
         // Handle query execution error
         qDebug() << "Error executing query:" << query.lastError();
     }
-    ui->passLabel->setText(QString::number(teamAVGPassResult)); //set the text of the passLabel
+    QString formattedPassResult = QString::number(teamAVGPassResult, 'f', 2);
+    ui->passLabel->setText(formattedPassResult); //set the text of the passLabel
 
 
     //Insert value for TacklePer90 box
@@ -134,7 +135,9 @@ void TeamStatistics:: loadPlayerStats(){
         // Handle query execution error
         qDebug() << "Error executing query:" << query.lastError();
     }
-    ui->tackleLabel->setText(QString::number(teamAVGTackleResult)); //set the text of the tackleLabel
+    // Limit the result to two decimal places
+    QString formattedTackleResult = QString::number(teamAVGTackleResult, 'f', 2);
+    ui->tackleLabel->setText(formattedTackleResult); // Set the text of the tackleLabel
 
 
     //Insert value for DribblePer90 box
@@ -150,7 +153,8 @@ void TeamStatistics:: loadPlayerStats(){
         // Handle query execution error
         qDebug() << "Error executing query:" << query.lastError();
     }
-    ui->dribbleLabel->setText(QString::number(teamAVGDribbleResult)); //set the text of the dribbleLabel
+    QString formattedDribbleResult = QString::number(teamAVGDribbleResult, 'f', 2);
+    ui->dribbleLabel->setText(formattedDribbleResult); //set the text of the dribbleLabel
 
 }
 
