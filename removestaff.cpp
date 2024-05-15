@@ -23,7 +23,8 @@ RemoveStaff::~RemoveStaff()
 
 void RemoveStaff::populateStaff() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
+    //db.setDatabaseName("/Users/tom/Project-Cpp-OOP/PlayerManagement.db");
+    db.setDatabaseName("E:\\Workspace\\FootballClubManagementSystem\\PlayerManagement.db");
 
     //Check if database is open
     if (db.open()){

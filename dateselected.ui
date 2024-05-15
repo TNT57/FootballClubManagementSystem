@@ -65,6 +65,19 @@
     <string>Time:</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="teamListButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>190</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Team List</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
