@@ -6,11 +6,17 @@ DateSelected::DateSelected(QWidget *parent)
     , ui(new Ui::DateSelected)
 {
     ui->setupUi(this);
+    ptrStartingList = new StartingList();
+    //ptrOurStartingXI = new OurStartingXI();
+    //ptrOpponentStartingXI = new OpponentStartingXI();
 }
 
 DateSelected::~DateSelected()
 {
     delete ui;
+    delete ptrStartingList;
+    //delete ptrOurStartingXI;
+    //delete ptrOpponentStartingXI;
 }
 
 void DateSelected::fetchMatchData(const QDate &date)
@@ -25,7 +31,7 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->opponentTeamNameLabel->setText("Opponent Team Name: "
                                            + query.value("OpponentName").toString());
         ui->locationLabel->setText("Location: " + query.value("Location").toString());
-        ui->teamListButton->show();  // Make the button visible
+        ui -> showStartingListButton -> show();  // Make the button visible
     }
 
     else {
@@ -34,13 +40,17 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->timeLabel->clear();
         ui->opponentTeamNameLabel->clear();
         ui->locationLabel->clear();
-        ui -> teamListButton -> hide();
+        ui -> showStartingListButton -> hide();
         QMessageBox::information(this, "There is no match today", "There is no match today");
     }
 }
 
-void DateSelected::on_teamListButton_clicked()
+void DateSelected::on_showStartingListButton_clicked()
 {
+    //ptrOurStartingXI -> setWindowTitle("Starting XI");
+    //ptrOurStartingXI -> show();
 
+    ptrStartingList -> setWindowTitle("Starting XI");
+    ptrStartingList -> show();
 }
 

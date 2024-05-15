@@ -16,9 +16,12 @@ SOURCES += \
     editstaff.cpp \
     main.cpp \
     matchfixture.cpp \
+    opponentstartingxi.cpp \
+    ourstartingxi.cpp \
     removematchfixture.cpp \
     removeplayer.cpp \
     removestaff.cpp \
+    startinglist.cpp \
     teamstatistics.cpp \
     teamlist.cpp \
     staff.cpp \
@@ -34,9 +37,12 @@ HEADERS += \
     editplayer.h \
     editstaff.h \
     matchfixture.h \
+    opponentstartingxi.h \
+    ourstartingxi.h \
     removematchfixture.h \
     removeplayer.h \
     removestaff.h \
+    startinglist.h \
     teamstatistics.h \
     teamlist.h \
     staff.h \
@@ -55,6 +61,7 @@ FORMS += \
     removematchfixture.ui \
     removeplayer.ui \
     removestaff.ui \
+    startinglist.ui \
     teamstatistics.ui \
     teamlist.ui \
     people.ui \

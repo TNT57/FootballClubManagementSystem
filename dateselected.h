@@ -6,6 +6,9 @@
 #include <QSqlQuery>
 #include <QDate>
 #include <QMessageBox>
+#include "startinglist.h"
+//#include "ourstartingxi.h"
+//#include "opponentstartingxi.h"
 namespace Ui {
 class DateSelected;
 }
@@ -20,10 +23,13 @@ public:
     void fetchMatchData(const QDate &date);
 
 private slots:
-    void on_teamListButton_clicked();
+    void on_showStartingListButton_clicked();
 
 private:
     Ui::DateSelected *ui;
+    StartingList *ptrStartingList;
+    //OurStartingXI *ptrOurStartingXI;
+    //OpponentStartingXI *ptrOpponentStartingXI;
 };
 
 #endif // DATESELECTED_H

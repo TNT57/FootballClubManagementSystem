@@ -29,6 +29,5 @@ void People::on_staffButton_clicked()
 {
     ptrStaff -> setWindowTitle("Staff");
     ptrStaff -> show();
-
 }
 
