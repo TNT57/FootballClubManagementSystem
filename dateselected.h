@@ -22,6 +22,8 @@ public:
     ~DateSelected();
     void fetchMatchData(const QDate &date);
 
+    QString get_opponentName();
+
 private slots:
     void on_viewOurStartingButton_clicked();
 
@@ -34,6 +36,8 @@ private:
     //StartingList *ptrStartingList;
     OurStartingXI *ptrOurStartingXI;
     OpponentStartingXI *ptrOpponentStartingXI;
+
+    QString opponentName = "";
 };
 
 #endif // DATESELECTED_H

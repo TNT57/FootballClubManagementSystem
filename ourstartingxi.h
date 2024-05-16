@@ -18,6 +18,7 @@ public:
     OurStartingXI();
     void choosePlayer();
     void loadStartingXI();
+    ~OurStartingXI();
 private:
     QSqlQueryModel *model;
     ChooseOurXI *ptrChooseOurXI;

@@ -4,6 +4,13 @@ OurStartingXI::OurStartingXI() {
     loadStartingXI();
     ptrChooseOurXI = new ChooseOurXI();
 }
+
+OurStartingXI::~OurStartingXI() {
+    delete ui;
+    delete model;
+    delete ptrChooseOurXI;
+}
+
 void OurStartingXI::loadStartingXI(){
     QSqlDatabase db = QSqlDatabase::database("DB1");
     model = new QSqlQueryModel();

@@ -14,15 +14,17 @@
 class OpponentStartingXI : public StartingList
 {
 public:
-    OpponentStartingXI();
+    OpponentStartingXI(QString opponentName);
     void choosePlayer();
     void loadStartingXI();
     ~OpponentStartingXI();
 
+    void set_opponentName(QString opponentName);
+
 private:
     QSqlQueryModel *model;
     ChooseOpponentXI *ptrChooseOpponentXI;
-    QString opponentName = "RealMadrid";
+    QString opponentName;
 };
 
 #endif // OPPONENTSTARTINGXI_H

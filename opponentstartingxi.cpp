@@ -1,6 +1,6 @@
 #include "opponentstartingxi.h"
 
-OpponentStartingXI::OpponentStartingXI() {
+OpponentStartingXI::OpponentStartingXI(QString opponentName): opponentName(opponentName) {
     loadStartingXI();
     ptrChooseOpponentXI = new ChooseOpponentXI();
 }
@@ -9,6 +9,11 @@ OpponentStartingXI::~OpponentStartingXI() {
     delete ui;
     delete model;
     delete ptrChooseOpponentXI;
+}
+
+void OpponentStartingXI::set_opponentName(QString opponentName) {
+    this -> opponentName = opponentName;
+    loadStartingXI();
 }
 
 void OpponentStartingXI::loadStartingXI(){

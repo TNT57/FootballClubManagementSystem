@@ -8,7 +8,8 @@ DateSelected::DateSelected(QWidget *parent)
     ui->setupUi(this);
     //ptrStartingList = new StartingList();
     ptrOurStartingXI = new OurStartingXI();
-    ptrOpponentStartingXI = new OpponentStartingXI();
+    ptrOpponentStartingXI = new OpponentStartingXI(get_opponentName());
+    //ptrOpponentStartingXI = nullptr;
 }
 
 DateSelected::~DateSelected()
@@ -25,13 +26,17 @@ void DateSelected::fetchMatchData(const QDate &date)
     QSqlQuery query(database);
     query.prepare("SELECT * FROM MatchRecord WHERE Date = :Date");
     query.bindValue(":Date", date.toString("dd/MM/yyyy"));
+
     if (query.exec() && query.next()) {
         ui->dateLabel->setText("Date: " + query.value("Date").toString());
         ui->timeLabel->setText("Time: " + query.value("Time").toString());
+
+        opponentName = query.value("OpponentName").toString(); // store opponent name
+        qDebug() << opponentName;
         ui->opponentTeamNameLabel->setText("Opponent Team Name: "
                                            + query.value("OpponentName").toString());
+
         ui->locationLabel->setText("Location: " + query.value("Location").toString());
-        //ui -> showStartingListButton -> show();  // Make the button visible
         ui -> viewOurStartingButton -> show();
         ui -> viewOpponentStartingButton -> show();
 
@@ -43,11 +48,14 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->timeLabel->clear();
         ui->opponentTeamNameLabel->clear();
         ui->locationLabel->clear();
-        //ui -> showStartingListButton -> hide();
         ui -> viewOurStartingButton -> hide();
         ui -> viewOpponentStartingButton -> hide();
-        QMessageBox::information(this, "There is no match today", "There is no match today");
+        QMessageBox::information(this, "No Match Founded", "There is no match today");
     }
+}
+
+QString DateSelected::get_opponentName() {
+    return opponentName;
 }
 
 void DateSelected::on_viewOurStartingButton_clicked()
@@ -59,6 +67,9 @@ void DateSelected::on_viewOurStartingButton_clicked()
 
 void DateSelected::on_viewOpponentStartingButton_clicked()
 {
+    //delete ptrOpponentStartingXI;
+    //ptrOpponentStartingXI = new OpponentStartingXI(get_opponentName());
+    ptrOpponentStartingXI -> set_opponentName(get_opponentName());
     ptrOpponentStartingXI -> setWindowTitle("Opponent Starting XI");
     ptrOpponentStartingXI -> show();
 }
