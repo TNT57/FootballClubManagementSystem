@@ -6,9 +6,9 @@
 #include <QSqlQuery>
 #include <QDate>
 #include <QMessageBox>
-#include "startinglist.h"
-//#include "ourstartingxi.h"
-//#include "opponentstartingxi.h"
+//#include "startinglist.h"
+#include "ourstartingxi.h"
+#include "opponentstartingxi.h"
 namespace Ui {
 class DateSelected;
 }
@@ -23,13 +23,17 @@ public:
     void fetchMatchData(const QDate &date);
 
 private slots:
-    void on_showStartingListButton_clicked();
+    void on_viewOurStartingButton_clicked();
+
+    void on_viewOpponentStartingButton_clicked();
+
+    //void on_simulateMatchButton_clicked();
 
 private:
     Ui::DateSelected *ui;
-    StartingList *ptrStartingList;
-    //OurStartingXI *ptrOurStartingXI;
-    //OpponentStartingXI *ptrOpponentStartingXI;
+    //StartingList *ptrStartingList;
+    OurStartingXI *ptrOurStartingXI;
+    OpponentStartingXI *ptrOpponentStartingXI;
 };
 
 #endif // DATESELECTED_H

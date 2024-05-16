@@ -6,6 +6,7 @@ StartingList::StartingList(QWidget *parent)
     , ui(new Ui::StartingList)
 {
     ui->setupUi(this);
+      database = QSqlDatabase::database("DB1");
 }
 
 StartingList::~StartingList()
@@ -13,20 +14,8 @@ StartingList::~StartingList()
     delete ui;
 }
 
-void StartingList::on_modifyOurStartingButton_clicked()
+void StartingList::on_chooseStartingButton_clicked()
 {
-
-}
-
-
-void StartingList::on_modifyOpponentStartingButton_clicked()
-{
-
-}
-
-
-void StartingList::on_simulateMatchButton_clicked()
-{
-
+    choosePlayer();
 }
 

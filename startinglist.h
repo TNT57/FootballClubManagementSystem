@@ -2,6 +2,13 @@
 #define STARTINGLIST_H
 
 #include <QWidget>
+#include <QListWidget>
+#include <QSqlTableModel>
+#include <QSqlQuery>
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QMessageBox>
+#include <QTableView>
 
 namespace Ui {
 class StartingList;
@@ -13,17 +20,15 @@ class StartingList : public QWidget
 
 public:
     explicit StartingList(QWidget *parent = nullptr);
+    virtual void choosePlayer() = 0;
     ~StartingList();
 
 private slots:
-    void on_modifyOurStartingButton_clicked();
+    void on_chooseStartingButton_clicked();
 
-    void on_modifyOpponentStartingButton_clicked();
-
-    void on_simulateMatchButton_clicked();
-
-private:
+protected:
     Ui::StartingList *ui;
+    QSqlDatabase database;
 };
 
 #endif // STARTINGLIST_H

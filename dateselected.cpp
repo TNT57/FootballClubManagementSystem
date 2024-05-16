@@ -6,17 +6,17 @@ DateSelected::DateSelected(QWidget *parent)
     , ui(new Ui::DateSelected)
 {
     ui->setupUi(this);
-    ptrStartingList = new StartingList();
-    //ptrOurStartingXI = new OurStartingXI();
-    //ptrOpponentStartingXI = new OpponentStartingXI();
+    //ptrStartingList = new StartingList();
+    ptrOurStartingXI = new OurStartingXI();
+    ptrOpponentStartingXI = new OpponentStartingXI();
 }
 
 DateSelected::~DateSelected()
 {
     delete ui;
-    delete ptrStartingList;
-    //delete ptrOurStartingXI;
-    //delete ptrOpponentStartingXI;
+    //delete ptrStartingList;
+    delete ptrOurStartingXI;
+    delete ptrOpponentStartingXI;
 }
 
 void DateSelected::fetchMatchData(const QDate &date)
@@ -31,7 +31,10 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->opponentTeamNameLabel->setText("Opponent Team Name: "
                                            + query.value("OpponentName").toString());
         ui->locationLabel->setText("Location: " + query.value("Location").toString());
-        ui -> showStartingListButton -> show();  // Make the button visible
+        //ui -> showStartingListButton -> show();  // Make the button visible
+        ui -> viewOurStartingButton -> show();
+        ui -> viewOpponentStartingButton -> show();
+
     }
 
     else {
@@ -40,17 +43,22 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->timeLabel->clear();
         ui->opponentTeamNameLabel->clear();
         ui->locationLabel->clear();
-        ui -> showStartingListButton -> hide();
+        //ui -> showStartingListButton -> hide();
+        ui -> viewOurStartingButton -> hide();
+        ui -> viewOpponentStartingButton -> hide();
         QMessageBox::information(this, "There is no match today", "There is no match today");
     }
 }
 
-void DateSelected::on_showStartingListButton_clicked()
+void DateSelected::on_viewOurStartingButton_clicked()
 {
-    //ptrOurStartingXI -> setWindowTitle("Starting XI");
-    //ptrOurStartingXI -> show();
-
-    ptrStartingList -> setWindowTitle("Starting XI");
-    ptrStartingList -> show();
+    ptrOurStartingXI -> setWindowTitle("Our Starting XI");
+    ptrOurStartingXI -> show();
 }
 
+
+void DateSelected::on_viewOpponentStartingButton_clicked()
+{
+    ptrOpponentStartingXI -> setWindowTitle("Opponent Starting XI");
+    ptrOpponentStartingXI -> show();
+}

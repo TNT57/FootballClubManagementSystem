@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>StartingList</class>
- <widget class="QWidget" name="StartingList">
+ <class>ChooseOpponentXI</class>
+ <widget class="QWidget" name="ChooseOpponentXI">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>516</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTableView" name="tableView">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>90</y>
-     <width>391</width>
-     <height>201</height>
+     <x>5</x>
+     <y>11</y>
+     <width>431</width>
+     <height>241</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="chooseStartingButton">
+  <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>280</y>
-     <width>131</width>
+     <x>150</x>
+     <y>270</y>
+     <width>121</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Choose Starting XI</string>
+    <string>Confirm</string>
    </property>
   </widget>
  </widget>

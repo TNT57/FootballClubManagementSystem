@@ -11,6 +11,8 @@ CONFIG += c++17
 
 SOURCES += \
     addmatchfixture.cpp \
+    chooseopponentxi.cpp \
+    chooseourxi.cpp \
     dateselected.cpp \
     editplayer.cpp \
     editstaff.cpp \
@@ -33,6 +35,8 @@ SOURCES += \
 
 HEADERS += \
     addmatchfixture.h \
+    chooseopponentxi.h \
+    chooseourxi.h \
     dateselected.h \
     editplayer.h \
     editstaff.h \
@@ -54,6 +58,8 @@ HEADERS += \
 
 FORMS += \
     addmatchfixture.ui \
+    chooseopponentxi.ui \
+    chooseourxi.ui \
     dateselected.ui \
     editplayer.ui \
     editstaff.ui \
