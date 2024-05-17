@@ -21,10 +21,13 @@ class StartingList : public QWidget
 public:
     explicit StartingList(QWidget *parent = nullptr);
     virtual void choosePlayer() = 0;
+    virtual void reloadPlayer() = 0;
     ~StartingList();
 
 private slots:
     void on_chooseStartingButton_clicked();
+
+    void on_reloadButton_clicked();
 
 protected:
     Ui::StartingList *ui;

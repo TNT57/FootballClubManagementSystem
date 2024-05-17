@@ -17,7 +17,8 @@ class OurStartingXI : public StartingList
 public:
     OurStartingXI();
     void choosePlayer();
-    void loadStartingXI();
+    void loadOurXI();
+    void reloadPlayer();
     ~OurStartingXI();
 private:
     QSqlQueryModel *model;

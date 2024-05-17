@@ -2,6 +2,9 @@
 #define CHOOSEOURXI_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMessageBox>
 
 namespace Ui {
 class ChooseOurXI;
@@ -14,6 +17,8 @@ class ChooseOurXI : public QWidget
 public:
     explicit ChooseOurXI(QWidget *parent = nullptr);
     ~ChooseOurXI();
+
+    void loadPlayers();
 
 private slots:
     void on_confirmButton_clicked();

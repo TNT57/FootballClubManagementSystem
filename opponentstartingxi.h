@@ -16,9 +16,11 @@ class OpponentStartingXI : public StartingList
 public:
     OpponentStartingXI(QString opponentName);
     void choosePlayer();
-    void loadStartingXI();
+    void loadOpponentXI();
+    void reloadPlayer();
     ~OpponentStartingXI();
 
+    QString get_opponentName();
     void set_opponentName(QString opponentName);
 
 private:

@@ -19,3 +19,9 @@ void StartingList::on_chooseStartingButton_clicked()
     choosePlayer();
 }
 
+
+void StartingList::on_reloadButton_clicked()
+{
+    reloadPlayer();
+}
+

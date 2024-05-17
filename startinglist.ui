@@ -36,6 +36,19 @@
     <string>Choose Starting XI</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="reloadButton">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>280</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reload</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

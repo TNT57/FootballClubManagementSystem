@@ -37,7 +37,7 @@ private:
     OurStartingXI *ptrOurStartingXI;
     OpponentStartingXI *ptrOpponentStartingXI;
 
-    QString opponentName = "";
+    QString opponentName;
 };
 
 #endif // DATESELECTED_H
