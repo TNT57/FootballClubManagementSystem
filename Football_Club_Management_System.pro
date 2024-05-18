@@ -23,6 +23,7 @@ SOURCES += \
     removematchfixture.cpp \
     removeplayer.cpp \
     removestaff.cpp \
+    simulatematch.cpp \
     startinglist.cpp \
     teamstatistics.cpp \
     teamlist.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     removematchfixture.h \
     removeplayer.h \
     removestaff.h \
+    simulatematch.h \
     startinglist.h \
     teamstatistics.h \
     teamlist.h \
@@ -67,6 +69,7 @@ FORMS += \
     removematchfixture.ui \
     removeplayer.ui \
     removestaff.ui \
+    simulatematch.ui \
     startinglist.ui \
     teamstatistics.ui \
     teamlist.ui \

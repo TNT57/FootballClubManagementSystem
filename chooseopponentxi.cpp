@@ -55,9 +55,17 @@ void ChooseOpponentXI::on_confirmButton_clicked()
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
 
-    QString queryString = QString("UPDATE %1 SET Selected = 1 WHERE ShirtNumber = :ShirtNumber").arg(opponentName);
+    // Set all players to unselected
+    QString queryString = QString("UPDATE %1 SET Selected = 0").arg(opponentName);
     query.prepare(queryString);
 
+    if (!query.exec()) {
+        QMessageBox::critical(this, "Error", "Failed to update player selection");
+        return;
+    }
+
+    queryString = QString("UPDATE %1 SET Selected = 1 WHERE ShirtNumber = :ShirtNumber").arg(opponentName);
+    query.prepare(queryString);
     bool success = true;
 
     for (int i = 0; i < ui -> listWidget -> count(); i++) {

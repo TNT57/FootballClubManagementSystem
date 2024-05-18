@@ -9,6 +9,7 @@
 //#include "startinglist.h"
 #include "ourstartingxi.h"
 #include "opponentstartingxi.h"
+#include "simulatematch.h"
 namespace Ui {
 class DateSelected;
 }
@@ -29,13 +30,14 @@ private slots:
 
     void on_viewOpponentStartingButton_clicked();
 
-    //void on_simulateMatchButton_clicked();
+    void on_simulateMatchButton_clicked();
 
 private:
     Ui::DateSelected *ui;
     //StartingList *ptrStartingList;
     OurStartingXI *ptrOurStartingXI;
     OpponentStartingXI *ptrOpponentStartingXI;
+    SimulateMatch *ptrSimulateMatch;
 
     QString opponentName;
 };

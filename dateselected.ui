@@ -91,6 +91,19 @@
     <string>View Opponent Starting XI</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="simulateMatchButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>220</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Simulate Match</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

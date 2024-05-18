@@ -46,8 +46,16 @@ void ChooseOurXI::on_confirmButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
-    query.prepare("UPDATE Player SET Selected = 1 WHERE ShirtNumber = :ShirtNumber");
 
+    // Set all players to unselected
+    query.prepare("UPDATE Player SET Selected = 0");
+
+    if (!query.exec()) {
+        QMessageBox::critical(this, "Error", "Failed to update player selection");
+        return;
+    }
+
+    query.prepare("UPDATE Player SET Selected = 1 WHERE ShirtNumber = :ShirtNumber");
     bool success = true;
 
     for (int i = 0; i < ui -> listWidget -> count(); i++) {
@@ -60,7 +68,7 @@ void ChooseOurXI::on_confirmButton_clicked()
             if (!query.exec()) {
                 success = false;
                 QMessageBox::critical(this, "Error", "Failed to update player selection");
-                break; // avoid display multiple error messages - break when error happens
+                return; // avoid display multiple error messages - break when error happens
             }
         }
     }

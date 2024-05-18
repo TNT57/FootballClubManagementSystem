@@ -9,6 +9,7 @@ DateSelected::DateSelected(QWidget *parent)
     //ptrStartingList = new StartingList();
     ptrOurStartingXI = new OurStartingXI();
     ptrOpponentStartingXI = new OpponentStartingXI(get_opponentName());
+    ptrSimulateMatch = new SimulateMatch();
     //ptrOpponentStartingXI = nullptr;
 }
 
@@ -18,6 +19,7 @@ DateSelected::~DateSelected()
     //delete ptrStartingList;
     delete ptrOurStartingXI;
     delete ptrOpponentStartingXI;
+    delete ptrSimulateMatch;
 }
 
 void DateSelected::fetchMatchData(const QDate &date)
@@ -50,6 +52,7 @@ void DateSelected::fetchMatchData(const QDate &date)
         ui->locationLabel->clear();
         ui -> viewOurStartingButton -> hide();
         ui -> viewOpponentStartingButton -> hide();
+        ui -> simulateMatchButton -> hide();
         QMessageBox::information(this, "No Match Founded", "There is no match today");
     }
 }
@@ -73,3 +76,15 @@ void DateSelected::on_viewOpponentStartingButton_clicked()
     ptrOpponentStartingXI -> setWindowTitle("Opponent Starting XI");
     ptrOpponentStartingXI -> show();
 }
+
+void DateSelected::on_simulateMatchButton_clicked()
+{
+    ptrSimulateMatch -> set_opponentName(opponentName);
+    qDebug() << ptrSimulateMatch -> get_opponentName();
+
+    if (ptrSimulateMatch -> checkNumPlayers()) {
+        ptrSimulateMatch -> simulate();
+        ptrSimulateMatch -> show();
+    }
+}
+
