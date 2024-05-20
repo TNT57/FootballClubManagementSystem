@@ -39,6 +39,19 @@
     <string>Staff</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="formerPlayerButton">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Former Player</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

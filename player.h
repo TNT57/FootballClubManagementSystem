@@ -10,11 +10,11 @@ class Player : public TeamList
 public:
     // constructor to inherit the ui from the teamlist class
     Player(QWidget *parent = nullptr);
-    void addPeople();
-    void removePeople();
+    void addPeople(); // can be used in Former Player
+    void removePeople(); // can be used in Former Player
     void editPeople();
-    void loadPlayer();
-    void reloadPeople();
+    void loadPlayer(); // can be used in Former Player
+    void reloadPeople(); // can be used in Former Player
     ~Player();
 
 private:

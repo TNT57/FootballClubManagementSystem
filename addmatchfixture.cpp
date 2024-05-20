@@ -8,6 +8,8 @@ AddMatchFixture::AddMatchFixture(QWidget *parent)
     , ui(new Ui::AddMatchFixture)
 {
     ui->setupUi(this);
+    ui -> dateEdit -> setDisplayFormat("dd/MM/yyyy");
+    ui -> dateEdit -> setDate(QDate::currentDate());
 }
 
 AddMatchFixture::~AddMatchFixture()

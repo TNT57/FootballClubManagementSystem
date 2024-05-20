@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "player.h"
 #include "staff.h"
+#include "formerplayer.h"
 
 namespace Ui {
 class People;
@@ -23,11 +24,13 @@ private slots:
 
     void on_staffButton_clicked();
 
+    void on_formerPlayerButton_clicked();
+
 private:
     Ui::People *ui;
     Player *ptrPlayer;
     Staff *ptrStaff;
-
+    FormerPlayer *ptrFormerPlayer;
 };
 
 #endif // PEOPLE_H

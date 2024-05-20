@@ -10,8 +10,6 @@
 #include <QMessageBox>
 #include <QLabel>
 
-
-
 namespace Ui {
 class RemovePlayer;
 }
