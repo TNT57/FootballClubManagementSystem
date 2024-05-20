@@ -16,10 +16,12 @@ SOURCES +=  \
     ../removestaff.cpp\
     ../editstaff.cpp\
     ../editplayer.cpp\
+    ../teamstatistics.cpp\
     tst_editplayer.cpp \
     tst_editstaff.cpp \
     tst_removeplayer.cpp \
-    tst_removestaff.cpp
+    tst_removestaff.cpp \
+    tst_teamstatistics.cpp
 
 HEADERS += \
     tst_addplayer.h \
@@ -30,7 +32,9 @@ HEADERS += \
     ../removestaff.h\
     ../editstaff.h\
     ../editplayer.h\
+    ../teamstatistics.h\
     tst_editplayer.h \
     tst_editstaff.h \
     tst_removeplayer.h \
-    tst_removestaff.h
+    tst_removestaff.h \
+    tst_teamstatistics.h

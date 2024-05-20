@@ -20,6 +20,7 @@ public:
     explicit TeamStatistics(QWidget *parent = nullptr);
     ~TeamStatistics();
     void loadPlayerStats();
+    friend class TestTeamStatistics;
 
 private slots:
     void on_btnReload_clicked();

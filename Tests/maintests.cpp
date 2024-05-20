@@ -13,6 +13,7 @@
 #include "tst_removeplayer.h"
 #include "tst_editstaff.h"
 #include "tst_editplayer.h"
+#include "tst_teamstatistics.h"
 // Include other test header files as needed
 
 
@@ -48,6 +49,9 @@ int main(int argc, char *argv[])
 
     TestEditPlayer editPlayerTest;
     status |= QTest::qExec(&editPlayerTest, argc, argv);
+
+    TestTeamStatistics teamStatisticsTest;
+    status |= QTest::qExec(&teamStatisticsTest, argc, argv);
 
     // Create instances of other test classes and run their tests as needed
 
