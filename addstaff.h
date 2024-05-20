@@ -20,14 +20,17 @@ class AddStaff : public QWidget
 
 public:
     explicit AddStaff(QWidget *parent = nullptr);
+
     bool validateInput();
+    friend class TestAddStaff;
+
     ~AddStaff();
 
 private slots:
     void on_confirmButton_clicked();
 
 private:
-    Ui::AddStaff *ui;
+   Ui::AddStaff *ui;
 };
 
 #endif // ADDSTAFF_H

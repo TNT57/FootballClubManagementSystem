@@ -19,6 +19,7 @@ class AddPlayer : public QWidget
 public:
     explicit AddPlayer(QWidget *parent = nullptr);
     bool validateInput();
+    friend class TestAddPlayer;
     ~AddPlayer();
 
 private slots:

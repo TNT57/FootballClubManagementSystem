@@ -22,6 +22,7 @@ public:
     void loadStaff();
     bool validateInput();
     int staffId;
+    friend class TestEditStaff;
     ~EditStaff();
 
 private slots:
