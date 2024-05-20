@@ -21,6 +21,7 @@ class RemoveStaff : public QWidget
 
 public:
     explicit RemoveStaff(QWidget *parent = nullptr);
+    friend class TestRemoveStaff;
     ~RemoveStaff();
 
 private slots:
