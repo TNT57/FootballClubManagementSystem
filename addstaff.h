@@ -23,7 +23,6 @@ public:
 
     bool validateInput();
     friend class TestAddStaff;
-
     ~AddStaff();
 
 private slots:

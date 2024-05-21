@@ -23,7 +23,7 @@ SOURCES +=  \
     tst_removeplayer.cpp \
     tst_removestaff.cpp \
     tst_simulatematch.cpp \
-    tst_teamstatistics.cpp
+    tst_teamstatistics.cpp \
 
 HEADERS += \
     tst_addplayer.h \
@@ -41,4 +41,5 @@ HEADERS += \
     tst_removeplayer.h \
     tst_removestaff.h \
     tst_simulatematch.h \
-    tst_teamstatistics.h
+    tst_teamstatistics.h\
+

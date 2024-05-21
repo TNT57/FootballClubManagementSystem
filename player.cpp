@@ -5,7 +5,7 @@ Player::Player(QWidget *parent) : TeamList(parent){
 }
 void Player:: loadPlayer(){
     QSqlDatabase db = QSqlDatabase::database("DB1");
-        model = new QSqlQueryModel();
+    model = new QSqlQueryModel();
 
     model->setQuery("SELECT * FROM Player", db);
     ui->tableView->setModel(model);

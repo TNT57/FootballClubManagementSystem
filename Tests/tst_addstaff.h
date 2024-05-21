@@ -11,7 +11,6 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "../addstaff.h"
-#include "../ui_addstaff.h"
 
 class TestAddStaff: public QObject
 {

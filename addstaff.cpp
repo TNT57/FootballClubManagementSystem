@@ -18,7 +18,7 @@ void AddStaff::on_confirmButton_clicked()
 {
     if (validateInput() == false ) {
         return;
-   }
+    }
     QString staffId = ui->staffIdLineEdit->text();
     QString name = ui-> nameLineEdit-> text();
     QString dob = ui-> dobLineEdit -> text();
@@ -54,7 +54,7 @@ bool AddStaff::validateInput(){
     while (query.next()){
         QString existedId = query.value(0).toString();
         if(staffId == existedId){
-             QMessageBox::critical(this, "Error", "Staff ID already existed!");
+            QMessageBox::critical(this, "Error", "Staff ID already existed!");
             query.finish();
             query.clear();
             return false;

@@ -13,6 +13,12 @@ AddPlayer::AddPlayer(QWidget *parent)
     ui->label_12->hide();
     ui->label_13->hide();
     ui->label_14->hide();
+
+    //Add background image to the widget
+    // QPixmap backgroundLabel("C:\\Users\\trung\\Downloads\\whitebackground.jpg");
+    // int w = ui->backgroundLabel->width();
+    // int h = ui->backgroundLabel->height();
+    // ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding));
 }
 
 AddPlayer::~AddPlayer()
@@ -72,7 +78,7 @@ bool AddPlayer::validateInput() {
 
     // all lines must be filled
     QStringList stats = {app, goal, assist, yellow, red, passPer90, tacklePer90, dribblePer90};
-     if (ui->positionComboBox->currentText() == "GK"){
+    if (ui->positionComboBox->currentText() == "GK"){
         cleanSheet = ui->cleanSheet->text();
         savePer90 = ui->savePer90LineEdit->text();
         saveRate = ui->saveRateLineEdit->text();
@@ -90,7 +96,7 @@ bool AddPlayer::validateInput() {
     if (ok && shirtNumberValue > 0) {
         qDebug() << "The input is a positive integer: " << shirtNumberValue;
     } else {
-         QMessageBox::critical(this, "Invalid input", "Shirt number must be a positive integer.");
+        QMessageBox::critical(this, "Invalid input", "Shirt number must be a positive integer.");
         return false;
     }
 
@@ -116,9 +122,9 @@ bool AddPlayer::validateInput() {
     }
     for (const QString &str : positiveIntegers) {
         int num = str.toInt(&ok);
-       if (ok && num >= 0){
-             qDebug() << "The input is a positive integer: " << num;
-       } else {
+        if (ok && num >= 0){
+            qDebug() << "The input is a positive integer: " << num;
+        } else {
             QMessageBox::critical(this, "Invalid Input", "App, Goal, Assist, and CleanSheet must be positive integers");
             return false;
         }

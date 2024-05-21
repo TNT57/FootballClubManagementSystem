@@ -22,6 +22,11 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Player's name: </string>
    </property>
@@ -39,9 +44,9 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>30</y>
-     <width>241</width>
+     <width>271</width>
      <height>31</height>
     </rect>
    </property>
@@ -55,11 +60,16 @@
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>390</y>
-     <width>100</width>
-     <height>32</height>
+     <x>230</x>
+     <y>400</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Confirm</string>

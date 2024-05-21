@@ -1,5 +1,8 @@
 #include "matchfixture.h"
 #include "ui_matchfixture.h"
+#include <QPushButton>
+#include <QVBoxLayout>
+
 
 MatchFixture::MatchFixture(QWidget *parent)
     : QWidget(parent)
@@ -9,6 +12,22 @@ MatchFixture::MatchFixture(QWidget *parent)
     ptrDateSelected = new DateSelected();
     ptrAddMatchFixture = new AddMatchFixture();
     ptrRemoveMatchFixture = new RemoveMatchFixture();
+
+    // Set up info button
+    // Set the text of the button to "i"
+    ui->label_2->setText("i");
+    // Set the tooltip for the label
+    ui->label_2->setToolTip("This is an information label.");
+
+    // Set the size of the label to be a square
+    ui->label_2->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->label_2->setStyleSheet("QLabel {"
+                               "border: 1px solid black;"
+                               "border-radius: 15px;" // Half of width/height
+                               "}");
+
 
     // Set green for current date
     QTextCharFormat currentDateFormat;
