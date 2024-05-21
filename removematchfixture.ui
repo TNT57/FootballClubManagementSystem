@@ -17,10 +17,15 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>70</y>
+     <y>60</y>
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Date:</string>
@@ -35,6 +40,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Opponent Team Name:</string>
    </property>
@@ -44,7 +54,7 @@
     <rect>
      <x>200</x>
      <y>180</y>
-     <width>131</width>
+     <width>141</width>
      <height>20</height>
     </rect>
    </property>
@@ -53,31 +63,26 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>110</y>
+     <y>100</y>
      <width>91</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Time:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="opponentTeamNameEdit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>140</y>
-     <width>131</width>
-     <height>20</height>
-    </rect>
    </property>
   </widget>
   <widget class="QDateEdit" name="dateEdit">
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>70</y>
-     <width>131</width>
+     <y>60</y>
+     <width>141</width>
      <height>22</height>
     </rect>
    </property>
@@ -89,7 +94,7 @@
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>110</y>
+     <y>100</y>
      <width>141</width>
      <height>22</height>
     </rect>
@@ -104,6 +109,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Location:</string>
    </property>
@@ -111,14 +121,29 @@
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>149</x>
      <y>240</y>
-     <width>80</width>
-     <height>18</height>
+     <width>91</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Confirm</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="opponentNameComboBox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>140</y>
+     <width>141</width>
+     <height>26</height>
+    </rect>
    </property>
   </widget>
  </widget>

@@ -22,6 +22,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Opponent Team Name:</string>
    </property>
@@ -34,6 +39,11 @@
      <width>241</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Date:</string>
@@ -48,6 +58,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Location:</string>
    </property>
@@ -61,6 +76,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Time:</string>
    </property>
@@ -68,11 +88,20 @@
   <widget class="QPushButton" name="viewOurStartingButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>10</x>
      <y>167</y>
-     <width>131</width>
-     <height>31</height>
+     <width>171</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click to view current starting players, update the starting players</string>
    </property>
    <property name="text">
     <string>View Our Starting XI</string>
@@ -81,11 +110,19 @@
   <widget class="QPushButton" name="viewOpponentStartingButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>200</x>
      <y>167</y>
-     <width>121</width>
-     <height>31</height>
+     <width>191</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click to view oppenent starting players, update opponent starting players</string>
    </property>
    <property name="text">
     <string>View Opponent Starting XI</string>
@@ -94,11 +131,19 @@
   <widget class="QPushButton" name="simulateMatchButton">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>220</y>
+     <x>120</x>
+     <y>230</y>
      <width>151</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Simulate match based on teams' statistics with results</string>
    </property>
    <property name="text">
     <string>Simulate Match</string>

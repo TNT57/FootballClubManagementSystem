@@ -1,4 +1,7 @@
 #include "removematchfixture.h"
+#include <QDebug>
+#include <QSqlError>
+#include <QSqlQuery>
 #include "ui_removematchfixture.h"
 
 RemoveMatchFixture::RemoveMatchFixture(QWidget *parent)
@@ -6,6 +9,10 @@ RemoveMatchFixture::RemoveMatchFixture(QWidget *parent)
     , ui(new Ui::RemoveMatchFixture)
 {
     ui->setupUi(this);
+
+    // Add the team names to the QComboBox
+    QStringList teams = {"Arsenal", "Liverpool", "ManCity", "PSG", "RealMadrid"};
+    ui->opponentNameComboBox->addItems(teams);
 }
 
 RemoveMatchFixture::~RemoveMatchFixture()
@@ -18,14 +25,14 @@ void RemoveMatchFixture::on_confirmButton_clicked()
     QDate date = ui -> dateEdit -> date();
     QString formattedDate = date.toString("dd/MM/yyyy");
     QString time = ui -> timeEdit -> text();
-    QString opponentTeamName = ui -> opponentTeamNameEdit -> text();
-    QString location = ui -> locationEdit -> text();
+    QString opponentTeamName = ui->opponentNameComboBox->currentText();
+    QString location = ui -> locationEdit -> text().toLower(); // Convert user input to lowercase
 
     QSqlDatabase database = QSqlDatabase::database("DB1");
     QSqlQuery query(database);
 
     // Check if a match record exists for the selected date, time, opponent team name, and location
-    query.prepare("SELECT * FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND Location = :Location");
+    query.prepare("SELECT * FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND LOWER(Location) = :Location"); // Convert database location to lowercase
     query.bindValue(":Date", formattedDate);
     query.bindValue(":Time", time);
     query.bindValue(":OpponentName", opponentTeamName);
@@ -37,7 +44,7 @@ void RemoveMatchFixture::on_confirmButton_clicked()
     }
 
     // If a match record exists, proceed with the deletion
-    query.prepare("DELETE FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND Location = :Location");
+    query.prepare("DELETE FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND LOWER(Location) = :Location"); // Convert database location to lowercase
     query.bindValue(":Date", formattedDate);
     query.bindValue(":Time", time);
     query.bindValue(":OpponentName", opponentTeamName);
@@ -52,4 +59,3 @@ void RemoveMatchFixture::on_confirmButton_clicked()
         QMessageBox::information(this, "Remove successfully", "Removed match with the provided details.");
     }
 }
-

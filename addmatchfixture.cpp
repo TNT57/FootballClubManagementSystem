@@ -3,11 +3,16 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include "ui_addmatchfixture.h"
+
 AddMatchFixture::AddMatchFixture(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AddMatchFixture)
 {
     ui->setupUi(this);
+
+    // Add the team names to the QComboBox
+    QStringList teams = {"Arsenal", "Liverpool", "ManCity", "PSG", "RealMadrid"};
+    ui->opponentTeamNameComboBox->addItems(teams);
     ui -> dateEdit -> setDisplayFormat("dd/MM/yyyy");
     ui -> dateEdit -> setDate(QDate::currentDate());
 }
@@ -22,7 +27,7 @@ void AddMatchFixture::on_confirmButton_clicked()
     QDate date = ui->dateEdit->date();
     QString formattedDate = date.toString("dd/MM/yyyy");
     QString time = ui->timeEdit->text();
-    QString opponentTeamName = ui->opponentTeamNameEdit->text();
+    QString opponentTeamName = ui->opponentTeamNameComboBox->currentText();
     QString location = ui->locationEdit->text();
     qDebug() << formattedDate << "," << time << " " << opponentTeamName << " " << location;
     QSqlDatabase database = QSqlDatabase::database("DB1");
