@@ -12,7 +12,7 @@ People::People(QWidget *parent)
     ptrStaff = new Staff();
 
     // Add icon to playerButton
-    QIcon playerIcon("C:\\Users\\trung\\Downloads\\meowPlayer-removebg-preview.png"); // Replace with your icon path
+    QIcon playerIcon("images/meowPlayer-removebg-preview.png"); // Replace with your icon path
     ui->playerButton->setIcon(playerIcon);
     ui->playerButton->setIconSize(QSize(50, 50)); // Set the desired icon size
     ui->playerButton->setStyleSheet("QPushButton {"

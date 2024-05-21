@@ -1,5 +1,5 @@
 #include "tst_addstaff.h"
-
+#include "../ui_addstaff.h"
 TestAddStaff::TestAddStaff()
 {
     addstaff = new AddStaff();
