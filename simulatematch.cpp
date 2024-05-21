@@ -96,8 +96,23 @@ void SimulateMatch::simulate() {
         }
     }
 
+    qDebug() << "Our Goals: " << ourGoals;
+    qDebug() << "Opponent Goals: " << opponentGoals;
+
+    // round goals to int
     int roundedOurGoals = qRound(ourGoals);
     int roundedOpponentGoals = qRound(opponentGoals);
+
+    qDebug() << "Our Goals (rounded): " << roundedOurGoals;
+    qDebug() << "Opponent Goals (rounded): " << roundedOpponentGoals;
+
+    // goals cannot be negative
+    roundedOurGoals = qMax(0, roundedOurGoals);
+    roundedOpponentGoals = qMax(0, roundedOpponentGoals);
+
+    qDebug() << "Our Goals (final): " << roundedOurGoals;
+    qDebug() << "Opponent Goals (final): " << roundedOpponentGoals;
+
 
     ui -> ourGoals -> setText(QString::number(roundedOurGoals));
     ui -> opponentGoals -> setText(QString::number(roundedOpponentGoals));

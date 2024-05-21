@@ -22,6 +22,7 @@ public:
     void set_opponentName(QString opponentName);
     bool checkNumPlayers();
     void simulate();
+    friend class TestSimulateMatch;
 
 private:
     Ui::SimulateMatch *ui;

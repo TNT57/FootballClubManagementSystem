@@ -13,6 +13,8 @@ AddMatchFixture::AddMatchFixture(QWidget *parent)
     // Add the team names to the QComboBox
     QStringList teams = {"Arsenal", "Liverpool", "ManCity", "PSG", "RealMadrid"};
     ui->opponentTeamNameComboBox->addItems(teams);
+    ui -> dateEdit -> setDisplayFormat("dd/MM/yyyy");
+    ui -> dateEdit -> setDate(QDate::currentDate());
 }
 
 AddMatchFixture::~AddMatchFixture()

@@ -10,8 +10,6 @@
 #include <QMessageBox>
 #include <QLabel>
 
-
-
 namespace Ui {
 class RemovePlayer;
 }
@@ -22,6 +20,8 @@ class RemovePlayer : public QWidget
 
 public:
     explicit RemovePlayer(QWidget *parent = nullptr);
+    void populatePlayers();
+    friend class TestRemovePlayer;
     ~RemovePlayer();
 
 private slots:
@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::RemovePlayer *ui;
-    void populatePlayers();
+
 };
 
 #endif // REMOVEPLAYER_H

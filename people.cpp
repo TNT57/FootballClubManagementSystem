@@ -60,6 +60,7 @@ People::~People()
     delete ui;
     delete ptrPlayer;
     delete ptrStaff;
+    delete ptrFormerPlayer;
 }
 
 void People::on_playerButton_clicked()
@@ -72,5 +73,12 @@ void People::on_staffButton_clicked()
 {
     ptrStaff -> setWindowTitle("Staff");
     ptrStaff -> show();
+}
+
+
+void People::on_formerPlayerButton_clicked()
+{
+    ptrFormerPlayer -> setWindowTitle("Former Player");
+    ptrFormerPlayer -> show();
 }
 

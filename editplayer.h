@@ -22,6 +22,7 @@ public:
     void loadPlayer();
     void loadPlayerPosition();
     bool validateInput();
+    friend class TestEditPlayer;
     ~EditPlayer();
 
 private slots:

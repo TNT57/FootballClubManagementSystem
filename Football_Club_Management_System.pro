@@ -10,16 +10,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addformerplayer.cpp \
     addmatchfixture.cpp \
     chooseopponentxi.cpp \
     chooseourxi.cpp \
     dateselected.cpp \
+    editformerplayer.cpp \
     editplayer.cpp \
     editstaff.cpp \
+    formerplayer.cpp \
     main.cpp \
     matchfixture.cpp \
     opponentstartingxi.cpp \
     ourstartingxi.cpp \
+    removeformerplayer.cpp \
     removematchfixture.cpp \
     removeplayer.cpp \
     removestaff.cpp \
@@ -35,15 +39,19 @@ SOURCES += \
     addstaff.cpp
 
 HEADERS += \
+    addformerplayer.h \
     addmatchfixture.h \
     chooseopponentxi.h \
     chooseourxi.h \
     dateselected.h \
+    editformerplayer.h \
     editplayer.h \
     editstaff.h \
+    formerplayer.h \
     matchfixture.h \
     opponentstartingxi.h \
     ourstartingxi.h \
+    removeformerplayer.h \
     removematchfixture.h \
     removeplayer.h \
     removestaff.h \
@@ -59,13 +67,16 @@ HEADERS += \
     addstaff.h
 
 FORMS += \
+    addformerplayer.ui \
     addmatchfixture.ui \
     chooseopponentxi.ui \
     chooseourxi.ui \
     dateselected.ui \
+    editformerplayer.ui \
     editplayer.ui \
     editstaff.ui \
     matchfixture.ui \
+    removeformerplayer.ui \
     removematchfixture.ui \
     removeplayer.ui \
     removestaff.ui \
