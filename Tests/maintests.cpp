@@ -1,3 +1,4 @@
+
 #include <QtTest>
 #include <QApplication>
 #include <QWidget>
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 
     int status = 0;
     QSqlDatabase database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    database.setDatabaseName("/Users/tom/PlayerManagement.db");
+    database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
     if(!database.open()){
         qDebug() << "Maintest: Error: Unable to open database..";
     }
