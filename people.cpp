@@ -28,7 +28,8 @@ People::People(QWidget *parent)
 
 
     // Add icon to staffButton
-    QIcon staffIcon("C:\\Users\\trung\\Downloads\\sportStaffImg.png"); // Replace with your icon path
+    //QIcon staffIcon("C:\\Users\\trung\\Downloads\\sportStaffImg.png"); // Replace with your icon path
+    QIcon staffIcon("images/sportStaffImg.png");
     ui->staffButton->setIcon(staffIcon);
     ui->staffButton->setIconSize(QSize(50, 50)); // Set the desired icon size
     ui->staffButton->setStyleSheet("QPushButton {"
@@ -46,7 +47,8 @@ People::People(QWidget *parent)
     ui->label->setStyleSheet("QLabel { color : white; }");
 
     //Change background image to blurred
-    QPixmap backgroundImg("C:\\Users\\trung\\Downloads\\imageBlur.png");
+    //QPixmap backgroundImg("C:\\Users\\trung\\Downloads\\imageBlur.png");
+    QPixmap backgroundImg("images/imageBlur.png");
     int w = ui->backgroundImg->width();
     int h = ui->backgroundImg->height();
     ui->backgroundImg->setPixmap(backgroundImg.scaled(w,h,Qt::KeepAspectRatioByExpanding));

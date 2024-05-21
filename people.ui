@@ -52,6 +52,37 @@
     <string>Transfer List</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>40</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Player &amp; Staff Profile Editor</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="backgroundImg">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>backgroundImg</zorder>
+  <zorder>playerButton</zorder>
+  <zorder>staffButton</zorder>
+  <zorder>transferListButton</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>
