@@ -10,23 +10,22 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    addformerplayer.cpp \
     addmatchfixture.cpp \
+    addtransferlist.cpp \
     chooseopponentxi.cpp \
     chooseourxi.cpp \
     dateselected.cpp \
-    editformerplayer.cpp \
     editplayer.cpp \
     editstaff.cpp \
-    formerplayer.cpp \
+    edittransferlist.cpp \
     main.cpp \
     matchfixture.cpp \
     opponentstartingxi.cpp \
     ourstartingxi.cpp \
-    removeformerplayer.cpp \
     removematchfixture.cpp \
     removeplayer.cpp \
     removestaff.cpp \
+    removetransferlist.cpp \
     simulatematch.cpp \
     startinglist.cpp \
     teamstatistics.cpp \
@@ -36,25 +35,25 @@ SOURCES += \
     people.cpp \
     navigator.cpp \
     addplayer.cpp\
-    addstaff.cpp
+    addstaff.cpp \
+    transferlist.cpp
 
 HEADERS += \
-    addformerplayer.h \
     addmatchfixture.h \
+    addtransferlist.h \
     chooseopponentxi.h \
     chooseourxi.h \
     dateselected.h \
-    editformerplayer.h \
     editplayer.h \
     editstaff.h \
-    formerplayer.h \
+    edittransferlist.h \
     matchfixture.h \
     opponentstartingxi.h \
     ourstartingxi.h \
-    removeformerplayer.h \
     removematchfixture.h \
     removeplayer.h \
     removestaff.h \
+    removetransferlist.h \
     simulatematch.h \
     startinglist.h \
     teamstatistics.h \
@@ -64,22 +63,23 @@ HEADERS += \
     people.h \
     navigator.h \
     addplayer.h \
-    addstaff.h
+    addstaff.h \
+    transferlist.h
 
 FORMS += \
-    addformerplayer.ui \
     addmatchfixture.ui \
+    addtransferlist.ui \
     chooseopponentxi.ui \
     chooseourxi.ui \
     dateselected.ui \
-    editformerplayer.ui \
     editplayer.ui \
     editstaff.ui \
+    edittransferlist.ui \
     matchfixture.ui \
-    removeformerplayer.ui \
     removematchfixture.ui \
     removeplayer.ui \
     removestaff.ui \
+    removetransferlist.ui \
     simulatematch.ui \
     startinglist.ui \
     teamstatistics.ui \

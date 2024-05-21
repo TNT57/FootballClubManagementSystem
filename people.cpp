@@ -9,7 +9,7 @@ People::People(QWidget *parent)
     ui->setupUi(this);
     ptrPlayer = new Player();
     ptrStaff = new Staff();
-    ptrFormerPlayer = new FormerPlayer();
+    ptrTransferList = new TransferList();
 }
 
 People::~People()
@@ -17,7 +17,7 @@ People::~People()
     delete ui;
     delete ptrPlayer;
     delete ptrStaff;
-    delete ptrFormerPlayer;
+    delete ptrTransferList;
 }
 
 void People::on_playerButton_clicked()
@@ -33,9 +33,9 @@ void People::on_staffButton_clicked()
 }
 
 
-void People::on_formerPlayerButton_clicked()
+void People::on_transferListButton_clicked()
 {
-    ptrFormerPlayer -> setWindowTitle("Former Player");
-    ptrFormerPlayer -> show();
+    ptrTransferList -> setWindowTitle("Transfer List");
+    ptrTransferList -> show();
 }
 
