@@ -22,6 +22,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Tackle completed per 90</string>
    </property>
@@ -35,6 +40,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Number of clean sheet</string>
    </property>
@@ -47,6 +57,11 @@
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Red Card</string>
@@ -101,6 +116,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Save performed per 90</string>
    </property>
@@ -113,6 +133,11 @@
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Yellow Card</string>
@@ -127,6 +152,11 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -139,6 +169,11 @@
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Save success percentage</string>
@@ -193,6 +228,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Name</string>
    </property>
@@ -205,6 +245,11 @@
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Goals</string>
@@ -219,6 +264,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Shirt Number</string>
    </property>
@@ -232,6 +282,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Pass completed per 90</string>
    </property>
@@ -244,6 +299,11 @@
      <width>91</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Appearances</string>
@@ -298,6 +358,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Assists</string>
    </property>
@@ -311,6 +376,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Position</string>
    </property>
@@ -323,6 +393,11 @@
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Dribble completed per 90</string>
@@ -357,6 +432,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>New shirt number</string>
    </property>
@@ -376,7 +456,7 @@
     <rect>
      <x>160</x>
      <y>120</y>
-     <width>271</width>
+     <width>311</width>
      <height>20</height>
     </rect>
    </property>

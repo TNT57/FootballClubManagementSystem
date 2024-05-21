@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>310</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,16 @@
      <x>50</x>
      <y>190</y>
      <width>91</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Schedule a match with opponent team and add it to the calendar</string>
    </property>
    <property name="text">
     <string>Add</string>
@@ -29,11 +37,19 @@
   <widget class="QPushButton" name="removeMatchFixtureButton">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>260</x>
      <y>190</y>
      <width>91</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Cancel the match with oppenent team and delete it from calendar</string>
    </property>
    <property name="text">
     <string>Remove</string>
@@ -48,18 +64,50 @@
      <height>171</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>This is a calendar for the team, with scheduled match for each day. You can click into each day for more details.</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="reloadMatchFixture">
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>240</y>
+     <y>230</y>
      <width>80</width>
-     <height>18</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here to get the updated information about match schedule</string>
    </property>
    <property name="text">
     <string>Reload</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>280</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Red meaning there would be a match that day and Green would be vice versa</string>
+   </property>
+   <property name="text">
+    <string>Red: match available | Green: no match</string>
    </property>
   </widget>
  </widget>

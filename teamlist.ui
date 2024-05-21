@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>665</width>
-    <height>365</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>511</width>
      <height>321</height>
     </rect>
@@ -27,10 +27,18 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>70</y>
+     <y>50</y>
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Add a new team member</string>
    </property>
    <property name="text">
     <string>Add</string>
@@ -40,10 +48,18 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>130</y>
+     <y>110</y>
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Remove an existing team member</string>
    </property>
    <property name="text">
     <string>Remove</string>
@@ -53,10 +69,18 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>190</y>
+     <y>170</y>
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Alter a team member's information</string>
    </property>
    <property name="text">
     <string>Edit</string>
@@ -66,13 +90,39 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>250</y>
+     <y>230</y>
      <width>100</width>
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click to get updated information</string>
+   </property>
    <property name="text">
     <string>Reload</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>551</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Here is the current members, you can: ADD, REMOVE or EDIT team members.</string>
    </property>
   </widget>
  </widget>

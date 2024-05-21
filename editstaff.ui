@@ -42,8 +42,13 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>confirm</string>
+    <string>Confirm</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -78,6 +83,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Salary</string>
    </property>
@@ -101,6 +111,11 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Name</string>
    </property>
@@ -113,6 +128,11 @@
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Staff id</string>
@@ -127,6 +147,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Role</string>
    </property>
@@ -139,6 +164,11 @@
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Date of birth</string>
@@ -172,6 +202,11 @@
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>New ID</string>

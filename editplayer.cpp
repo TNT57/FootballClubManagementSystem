@@ -29,7 +29,7 @@ void EditPlayer::loadPlayer(){
     if (query.exec()) {
         ui->shirtNumberComboBox->clear();
         while (query.next()) {
-             // load the shirt number to the shirt number combo box
+            // load the shirt number to the shirt number combo box
             ui->shirtNumberComboBox->addItem(query.value("ShirtNumber").toString());
         }
     } else {
@@ -216,5 +216,5 @@ void EditPlayer::on_positionComboBox_currentTextChanged(const QString &position)
         ui->label_12->hide();
         ui->label_13->hide();
         ui->label_14->hide();
-}
+    }
 }

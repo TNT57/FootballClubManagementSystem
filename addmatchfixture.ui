@@ -13,24 +13,19 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="opponentTeamNameEdit">
-   <property name="geometry">
-    <rect>
-     <x>182</x>
-     <y>120</y>
-     <width>131</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>230</y>
-     <width>80</width>
-     <height>18</height>
+     <width>91</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -39,8 +34,8 @@
   <widget class="QTimeEdit" name="timeEdit">
    <property name="geometry">
     <rect>
-     <x>177</x>
-     <y>90</y>
+     <x>200</x>
+     <y>100</y>
      <width>141</width>
      <height>22</height>
     </rect>
@@ -49,11 +44,16 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
+     <x>40</x>
+     <y>70</y>
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Date:</string>
@@ -62,9 +62,9 @@
   <widget class="QLineEdit" name="locationEdit">
    <property name="geometry">
     <rect>
-     <x>182</x>
-     <y>150</y>
-     <width>131</width>
+     <x>200</x>
+     <y>160</y>
+     <width>141</width>
      <height>20</height>
     </rect>
    </property>
@@ -72,11 +72,16 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>90</y>
+     <x>40</x>
+     <y>100</y>
      <width>91</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Time:</string>
@@ -85,11 +90,16 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>150</y>
+     <x>40</x>
+     <y>160</y>
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Location:</string>
@@ -98,9 +108,9 @@
   <widget class="QDateEdit" name="dateEdit">
    <property name="geometry">
     <rect>
-     <x>179</x>
-     <y>60</y>
-     <width>131</width>
+     <x>200</x>
+     <y>70</y>
+     <width>141</width>
      <height>22</height>
     </rect>
    </property>
@@ -111,14 +121,29 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>120</y>
+     <x>40</x>
+     <y>130</y>
      <width>131</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Opponent Team Name:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="opponentTeamNameComboBox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>130</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
    </property>
   </widget>
  </widget>

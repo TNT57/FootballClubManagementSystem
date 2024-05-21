@@ -21,6 +21,7 @@ class AddStaff : public QWidget
 public:
     explicit AddStaff(QWidget *parent = nullptr);
     bool validateInput();
+    friend class TestAddStaff;
     ~AddStaff();
 
 private slots:

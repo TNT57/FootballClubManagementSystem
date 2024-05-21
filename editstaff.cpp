@@ -15,7 +15,7 @@ EditStaff::~EditStaff()
 }
 
 void EditStaff :: loadStaff(){
-  // load staff id into the combo box
+    // load staff id into the combo box
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
     if (!query.exec("SELECT StaffID FROM Staff")) {
@@ -66,7 +66,7 @@ bool EditStaff::validateInput(){
             return false;
         }
     }
-     bool ok;
+    bool ok;
     int newStaffIdInt = newStaffId.toInt(&ok);
     QSqlQuery query;
     query.prepare("SELECT * FROM Staff WHERE StaffID = :staffId");

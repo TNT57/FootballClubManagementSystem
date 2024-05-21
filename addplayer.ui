@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>452</width>
-    <height>538</height>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,15 @@
    <property name="geometry">
     <rect>
      <x>123</x>
-     <y>90</y>
+     <y>100</y>
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Positon</string>
@@ -30,8 +35,8 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>80</y>
-     <width>181</width>
+     <y>90</y>
+     <width>201</width>
      <height>32</height>
     </rect>
    </property>
@@ -90,7 +95,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>120</y>
+     <y>130</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -100,7 +105,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>50</y>
+     <y>60</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -110,7 +115,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>150</y>
+     <y>160</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -120,7 +125,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>180</y>
+     <y>190</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -130,7 +135,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>210</y>
+     <y>220</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -140,7 +145,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>240</y>
+     <y>250</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -150,7 +155,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>270</y>
+     <y>280</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -160,7 +165,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>300</y>
+     <y>310</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -170,7 +175,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>330</y>
+     <y>340</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -180,7 +185,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>360</y>
+     <y>370</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -190,7 +195,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>390</y>
+     <y>400</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -200,7 +205,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>420</y>
+     <y>430</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -210,7 +215,7 @@
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>450</y>
+     <y>460</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -220,10 +225,18 @@
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>490</y>
+     <y>500</y>
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here once finish with all the player statistics</string>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -233,10 +246,15 @@
    <property name="geometry">
     <rect>
      <x>93</x>
-     <y>50</y>
+     <y>60</y>
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Shirt Number</string>
@@ -246,10 +264,15 @@
    <property name="geometry">
     <rect>
      <x>123</x>
-     <y>120</y>
+     <y>130</y>
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Name</string>
@@ -259,10 +282,15 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>150</y>
+     <y>160</y>
      <width>91</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Appearances</string>
@@ -272,10 +300,15 @@
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>180</y>
+     <y>190</y>
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Goals</string>
@@ -285,10 +318,15 @@
    <property name="geometry">
     <rect>
      <x>123</x>
-     <y>210</y>
+     <y>220</y>
      <width>58</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Assists</string>
@@ -298,10 +336,15 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>240</y>
+     <y>250</y>
      <width>151</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Pass completed per 90</string>
@@ -311,10 +354,15 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>270</y>
+     <y>280</y>
      <width>151</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Tackle completed per 90</string>
@@ -324,10 +372,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>300</y>
+     <y>310</y>
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Dribble completed per 90</string>
@@ -337,10 +390,15 @@
    <property name="geometry">
     <rect>
      <x>97</x>
-     <y>330</y>
+     <y>340</y>
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Yellow Card</string>
@@ -350,10 +408,15 @@
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>360</y>
+     <y>370</y>
      <width>81</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Red Card</string>
@@ -363,10 +426,15 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>390</y>
+     <y>400</y>
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Save performed per 90</string>
@@ -376,10 +444,15 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>420</y>
+     <y>430</y>
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Number of clean sheet</string>
@@ -389,10 +462,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>450</y>
+     <y>460</y>
      <width>161</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Save success percentage</string>
@@ -432,6 +510,25 @@
    </property>
    <property name="text">
     <string>Save success percentage</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>261</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Enter new player's information!</string>
    </property>
   </widget>
  </widget>

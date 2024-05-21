@@ -5,9 +5,7 @@ Staff::Staff(QWidget* parent): TeamList(parent) {
 }
 void Staff::loadStaff(){
     QSqlDatabase db = QSqlDatabase::database("DB1");
-    if (model == nullptr) {
-         model = new QSqlQueryModel();
-    }
+    model = new QSqlQueryModel();
     model->setQuery("SELECT * FROM Staff", db);
     ui->tableView->setModel(model);
 }

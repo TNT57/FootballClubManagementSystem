@@ -11,6 +11,43 @@ TeamStatistics::TeamStatistics(QWidget *parent)
 {
     ui->setupUi(this);
     loadPlayerStats();
+
+    //Change background image to blurred
+    QPixmap backgroundLabel("C:\\Users\\trung\\Downloads\\imageBlur.png");
+    int w = ui->backgroundLabel->width();
+    int h = ui->backgroundLabel->height();
+    ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding));
+
+    //Change words color to white
+    ui->label->setStyleSheet("QLabel {"
+                             "color: white;"
+                             "}");
+    ui->label_2->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_3->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_4->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_5->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_6->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_7->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->label_8->setStyleSheet("QLabel {"
+                               "color: white;"
+                               "}");
+    ui->btnReload->setStyleSheet("QPushButton {"
+                                 "color: white;"
+                                 "}");
+
+
 }
 
 TeamStatistics::~TeamStatistics()
@@ -160,7 +197,6 @@ void TeamStatistics:: loadPlayerStats(){
     ui->dribbleLabel->setText(formattedDribbleResult); //set the text of the dribbleLabel
 
 }
-
 
 
 
