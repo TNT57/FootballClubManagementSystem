@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>505</width>
-    <height>392</height>
+    <height>333</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="toolTip">
+   <string>Go to info label for more details.</string>
   </property>
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
@@ -21,6 +24,14 @@
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here once finished selecting player.</string>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -35,6 +46,11 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Player: </string>
    </property>
@@ -44,9 +60,14 @@
     <rect>
      <x>90</x>
      <y>20</y>
-     <width>241</width>
+     <width>301</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -63,6 +84,31 @@
      <width>191</width>
      <height>31</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infoLabel">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>300</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could select a player to remove a player from the transfer list.</string>
+   </property>
+   <property name="text">
+    <string>i</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

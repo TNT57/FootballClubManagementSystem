@@ -14,11 +14,16 @@ AddPlayer::AddPlayer(QWidget *parent)
     ui->label_13->hide();
     ui->label_14->hide();
 
-    //Add background image to the widget
-    // QPixmap backgroundLabel("C:\\Users\\trung\\Downloads\\whitebackground.jpg");
-    // int w = ui->backgroundLabel->width();
-    // int h = ui->backgroundLabel->height();
-    // ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding));
+    //Set up stylesheet for info label
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
+
 }
 
 AddPlayer::~AddPlayer()

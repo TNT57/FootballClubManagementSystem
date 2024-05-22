@@ -32,9 +32,9 @@
   <widget class="QLineEdit" name="transferFeeEdit">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>170</y>
-     <width>171</width>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
@@ -47,6 +47,14 @@
      <width>100</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here once finished entering details.</string>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -61,6 +69,14 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Enter a valid transfer fee.</string>
+   </property>
    <property name="text">
     <string>Transfer Fee:</string>
    </property>
@@ -74,6 +90,14 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Select a name</string>
+   </property>
    <property name="text">
     <string>Player: </string>
    </property>
@@ -86,6 +110,31 @@
      <width>191</width>
      <height>31</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infoLabel">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>270</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could choose a player and change the amount of fee for that one player. Remember to click confirm once finished.</string>
+   </property>
+   <property name="text">
+    <string>i</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

@@ -17,6 +17,7 @@ class RemoveMatchFixture : public QWidget
 
 public:
     explicit RemoveMatchFixture(QWidget *parent = nullptr);
+    void populateMatchDay();
     ~RemoveMatchFixture();
 
 private slots:

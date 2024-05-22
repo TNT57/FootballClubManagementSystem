@@ -87,6 +87,26 @@ Navigator::Navigator(QWidget *parent)
                                "}");
 
 
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("'i' label support info: \n"
+                              "Welcome to our project Football Club Mangement System! \nA system that stores a club's team members including players and staves"
+                              " where you can add delete and even edit people's information.\n"
+                              "Another interesting thing of this program is that you can do Match Simulation to get results by managing players.\n"
+                              "So dive right in and explore the program.\n"
+                              "Remember there would always be support through this 'i' label.");
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "color: black;"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "border-color: beige;"
+                                 "}");
+
+
 }
 
 Navigator::~Navigator()

@@ -33,18 +33,38 @@ bool SimulateMatch::checkNumPlayers() {
         query.prepare(queryString);
 
         if (query.exec() && query.next() && query.value(0).toInt() == 11) {
-            // Can simulate match
-            return true;
+            // Check if there is exactly 1 GK selected in each team
+            query.prepare("SELECT COUNT(*) FROM Player WHERE Selected = 1 AND Position = 'GK'");
+
+            if (query.exec() && query.next() && query.value(0).toInt() == 1) {
+                queryString = QString("SELECT COUNT(*) FROM %1 WHERE Selected = 1 AND Position = 'GK'").arg(opponentName);
+                query.prepare(queryString);
+
+                if (query.exec() && query.next() && query.value(0).toInt() == 1) {
+                    // Can simulate match
+                    return true;
+                }
+
+                else {
+                    QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players with 1 GK to simulate match");
+                    return false;
+                }
+            }
+
+            else {
+                QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players with 1 GK to simulate match");
+                return false;
+            }
         }
 
         else {
-            QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players to simulate match");
+            QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players with 1 GK to simulate match");
             return false;
         }
     }
 
     else {
-        QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players to simulate match");
+        QMessageBox::critical(this, "Failed to simulate match", "Both teams require exactly 11 players with 1 GK to simulate match");
         return false;
     }
 }

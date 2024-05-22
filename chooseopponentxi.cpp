@@ -7,6 +7,15 @@ ChooseOpponentXI::ChooseOpponentXI(QWidget *parent)
 {
     ui->setupUi(this);
     loadPlayers(opponentName);
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
 }
 
 ChooseOpponentXI::~ChooseOpponentXI()

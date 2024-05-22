@@ -12,6 +12,16 @@ RemovePlayer::RemovePlayer(QWidget *parent)
 {
     ui->setupUi(this);
     populatePlayers();
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
+
 }
 
 //Defaul Destructor
@@ -22,8 +32,9 @@ RemovePlayer::~RemovePlayer()
 }
 
 void RemovePlayer::populatePlayers() {
-    QSqlDatabase db = QSqlDatabase::database("DB1");
+    QSqlDatabase db = QSqlDatabase::database("DB1"); //set database
 
+    //Check if database is open
     if (!db.isOpen()) {
         qDebug() << "Database connection failed: ";
         return;
@@ -51,7 +62,7 @@ void RemovePlayer::on_confirmButton_clicked() {
         int playerShirtNumber = infoParts.at(0).toInt(); // The player's shirt number is the first part
         QSqlDatabase db = QSqlDatabase::database("DB1");
         QSqlQuery query(db);
-        query.prepare("DELETE FROM Player WHERE ShirtNumber = :shirtNumber");
+        query.prepare("DELETE FROM Player WHERE ShirtNumber = :shirtNumber"); //use sql commands
         query.bindValue(":shirtNumber", playerShirtNumber);
         if (query.exec()) {
             QMessageBox::information(this, "Success", "Player removed successfully\n"
@@ -64,7 +75,6 @@ void RemovePlayer::on_confirmButton_clicked() {
         QMessageBox::critical(this, "Error", "Invalid selection.");
     }
 }
-
 
 
 void RemovePlayer::on_playerNameComboBox_activated()

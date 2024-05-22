@@ -156,12 +156,35 @@
      <string>           MANAGEMENT SYSTEM</string>
     </property>
    </widget>
+   <widget class="QLabel" name="infoLabel">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>380</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>17</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>i</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>navigatorBackgroundImg</zorder>
    <zorder>peopleButton</zorder>
    <zorder>matchButton</zorder>
    <zorder>teamButton</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
+   <zorder>infoLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -169,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>657</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

@@ -15,6 +15,7 @@ SOURCES += \
     chooseopponentxi.cpp \
     chooseourxi.cpp \
     dateselected.cpp \
+    editmatchfixture.cpp \
     editplayer.cpp \
     editstaff.cpp \
     edittransferlist.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     chooseopponentxi.h \
     chooseourxi.h \
     dateselected.h \
+    editmatchfixture.h \
     editplayer.h \
     editstaff.h \
     edittransferlist.h \
@@ -72,6 +74,7 @@ FORMS += \
     chooseopponentxi.ui \
     chooseourxi.ui \
     dateselected.ui \
+    editmatchfixture.ui \
     editplayer.ui \
     editstaff.ui \
     edittransferlist.ui \

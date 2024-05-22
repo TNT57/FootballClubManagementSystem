@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Go to the label info for more details.</string>
+  </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
@@ -44,7 +47,7 @@
   <widget class="QPushButton" name="reloadButton">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>290</x>
      <y>280</y>
      <width>80</width>
      <height>31</height>
@@ -55,8 +58,36 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here to get the most updated information.</string>
+   </property>
    <property name="text">
     <string>Reload</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infoLabel">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>300</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>You could view current starting list and could mange players from this table.</string>
+   </property>
+   <property name="text">
+    <string>i</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

@@ -57,6 +57,32 @@ People::People(QWidget *parent)
     //Change button shape and opacity
 
 
+    ui->transferListButton->setStyleSheet("QPushButton {"
+                                    "background-color: rgba(255, 255, 255, 0.25);"
+                                    "color: black;"
+                                    "border-radius: 15px;"
+                                    "}"
+                                    "QToolTip {"
+                                    "background-color: white;"
+                                    "color: black;"
+                                    "}");
+
+
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("Player: show the statistics of all the players.\n"
+                              "Staff: see all the information of staff in the team.\n"
+                              "Transferlist: see the players on the team's transfer list.");
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
+
+
 }
 
 People::~People()

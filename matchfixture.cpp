@@ -9,15 +9,12 @@ MatchFixture::MatchFixture(QWidget *parent)
     , ui(new Ui::MatchFixture)
 {
     ui->setupUi(this);
-    ptrDateSelected = new DateSelected();
-    ptrAddMatchFixture = new AddMatchFixture();
-    ptrRemoveMatchFixture = new RemoveMatchFixture();
 
     // Set up info button
     // Set the text of the button to "i"
     ui->label_2->setText("i");
     // Set the tooltip for the label
-    ui->label_2->setToolTip("This is an information label.");
+    ui->label_2->setToolTip("Click on the day to see the match detail!");
 
     // Set the size of the label to be a square
     ui->label_2->setFixedSize(30, 30);
@@ -57,22 +54,26 @@ MatchFixture::~MatchFixture()
     delete ptrDateSelected;
     delete ptrAddMatchFixture;
     delete ptrRemoveMatchFixture;
+    delete ptrEditMatchFixture;
 }
 
 void MatchFixture::on_addMatchFixtureButton_clicked()
 {
+    ptrAddMatchFixture = new AddMatchFixture();
     ptrAddMatchFixture -> setWindowTitle("Add Match Fixture");
     ptrAddMatchFixture -> show();
 }
 
 void MatchFixture::on_removeMatchFixtureButton_clicked()
 {
+    ptrRemoveMatchFixture = new RemoveMatchFixture();
     ptrRemoveMatchFixture -> setWindowTitle("Remove Match Fixture");
     ptrRemoveMatchFixture -> show();
 }
 
 void MatchFixture::on_calendarMatchFixture_clicked(const QDate &date)
 {
+    ptrDateSelected = new DateSelected();
     ptrDateSelected -> setWindowTitle("Match Day");
     ptrDateSelected -> show();
     ptrDateSelected -> fetchMatchData(date);
@@ -104,3 +105,11 @@ void MatchFixture::on_reloadMatchFixture_clicked()
         }
     }
 }
+
+void MatchFixture::on_editMatchFixtureButton_clicked()
+{
+    ptrEditMatchFixture = new EditMatchFixture();
+    ptrEditMatchFixture -> setWindowTitle("Edit Match Fixture");
+    ptrEditMatchFixture -> show();
+}
+

@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 
+//Constructor
 TeamStatistics::TeamStatistics(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::TeamStatistics)
@@ -16,7 +17,7 @@ TeamStatistics::TeamStatistics(QWidget *parent)
     QPixmap backgroundLabel("images/imageBlur.png");
     int w = ui->backgroundLabel->width();
     int h = ui->backgroundLabel->height();
-    ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding));
+    ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding)); //make image wider but keep the same ratio
 
     //Change words color to white
     ui->label->setStyleSheet("QLabel {"
@@ -47,9 +48,21 @@ TeamStatistics::TeamStatistics(QWidget *parent)
                                  "color: white;"
                                  "}");
 
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
 
 }
 
+//Create destructor
 TeamStatistics::~TeamStatistics()
 {
     qDebug() << "~RemovePlayer";
@@ -91,7 +104,7 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Insert value for Assists box
     query.prepare("SELECT Assists FROM Player");
-    int teamNumAssists = 0;
+    int teamNumAssists = 0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             teamNumAssists += query.value(0).toInt(); // Sum up the goals
@@ -105,7 +118,7 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Insert value for YellowCard box
     query.prepare("SELECT YellowCard FROM Player");
-    int teamNumYellowCards = 0;
+    int teamNumYellowCards = 0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             teamNumYellowCards += query.value(0).toInt(); // Sum up the number of cards
@@ -119,7 +132,7 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Insert value for YellowCard box
     query.prepare("SELECT RedCard FROM Player");
-    int teamNumRedCards = 0;
+    int teamNumRedCards = 0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             teamNumRedCards += query.value(0).toInt(); // Sum up the number of cards
@@ -133,7 +146,7 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Find the amount of players
     query.prepare("SELECT COUNT(Goals) FROM Player");
-    int playerAmount = 0;
+    int playerAmount = 0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             playerAmount = query.value(0).toInt();
@@ -147,8 +160,8 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Insert value for PassCmpPer90 box
     query.prepare("SELECT PassCmpPer90 FROM Player");
-    float teamAVGPass = 0.0;
-    float teamAVGPassResult = 0.0;
+    float teamAVGPass = 0.0; //initialize variable
+    float teamAVGPassResult = 0.0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             teamAVGPass += query.value(0).toInt(); // Sum up the percentage of pass
@@ -164,8 +177,8 @@ void TeamStatistics:: loadPlayerStats(){
 
     //Insert value for TacklePer90 box
     query.prepare("SELECT TacklePer90 FROM Player");
-    float teamAVGTackle = 0.0;
-    float teamAVGTackleResult = 0.0;
+    float teamAVGTackle = 0.0; //initialize variable
+    float teamAVGTackleResult = 0.0; //initialize variable
     if (query.exec()) { // Execute the query
         while (query.next()) { // Iterate over the query results
             teamAVGTackle += query.value(0).toInt(); // Sum up the percentage of pass
@@ -176,7 +189,7 @@ void TeamStatistics:: loadPlayerStats(){
         qDebug() << "Error executing query:" << query.lastError();
     }
     // Limit the result to two decimal places
-    QString formattedTackleResult = QString::number(teamAVGTackleResult, 'f', 2);
+    QString formattedTackleResult = QString::number(teamAVGTackleResult, 'f', 2); //round the value to 2 numbers behind decimal point
     ui->tackleLabel->setText(formattedTackleResult); // Set the text of the tackleLabel
 
 
@@ -199,8 +212,7 @@ void TeamStatistics:: loadPlayerStats(){
 }
 
 
-
 void TeamStatistics::on_btnReload_clicked()
 {
-    loadPlayerStats();
+    loadPlayerStats();  //load the data again using sql
 }
