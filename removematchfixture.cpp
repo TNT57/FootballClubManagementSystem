@@ -9,10 +9,11 @@ RemoveMatchFixture::RemoveMatchFixture(QWidget *parent)
     , ui(new Ui::RemoveMatchFixture)
 {
     ui->setupUi(this);
+    populateMatchDay();
 
     // Add the team names to the QComboBox
-    QStringList teams = {"Arsenal", "Liverpool", "ManCity", "PSG", "RealMadrid"};
-    ui->opponentNameComboBox->addItems(teams);
+    //QStringList teams = {"Arsenal", "Liverpool", "ManCity", "PSG", "RealMadrid"};
+    //ui->matchDayComboBox->addItems(teams);
 
     // Set the tooltip for the label
     ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
@@ -33,42 +34,57 @@ RemoveMatchFixture::~RemoveMatchFixture()
     delete ui;
 }
 
-void RemoveMatchFixture::on_confirmButton_clicked()
-{
-    QDate date = ui -> dateEdit -> date();
-    QString formattedDate = date.toString("dd/MM/yyyy");
-    QString time = ui -> timeEdit -> text();
-    QString opponentTeamName = ui->opponentNameComboBox->currentText();
-    QString location = ui -> locationEdit -> text().toLower(); // Convert user input to lowercase
+void RemoveMatchFixture::populateMatchDay() {
+    QSqlDatabase db = QSqlDatabase::database("DB1"); // set database
 
-    QSqlDatabase database = QSqlDatabase::database("DB1");
-    QSqlQuery query(database);
-
-    // Check if a match record exists for the selected date, time, opponent team name, and location
-    query.prepare("SELECT * FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND LOWER(Location) = :Location"); // Convert database location to lowercase
-    query.bindValue(":Date", formattedDate);
-    query.bindValue(":Time", time);
-    query.bindValue(":OpponentName", opponentTeamName);
-    query.bindValue(":Location", location);
-
-    if(!query.exec() || !query.next()){
-        QMessageBox::information(this, "No Match Found", "No match fixture found with the provided details.");
+    //Check if database is open
+    if (!db.isOpen()) {
+        qDebug() << "Database connection failed: ";
         return;
     }
 
-    // If a match record exists, proceed with the deletion
-    query.prepare("DELETE FROM MatchRecord WHERE Date = :Date AND Time = :Time AND OpponentName = :OpponentName AND LOWER(Location) = :Location"); // Convert database location to lowercase
-    query.bindValue(":Date", formattedDate);
-    query.bindValue(":Time", time);
-    query.bindValue(":OpponentName", opponentTeamName);
-    query.bindValue(":Location", location);
+    QSqlQuery query(db);
 
-    if(!query.exec()){
-        QSqlError error = query.lastError();
-        QMessageBox::critical(this, "Error", "Failed to remove data from the database: " + error.text());
+    if (!query.exec("SELECT Date, Time, OpponentName, Location FROM MatchRecord")) {
+        qDebug() << "Query execution failed: " << query.lastError();
+        return;
+    }
+
+    while (query.next()) {
+        QString date = query.value(0).toString();
+        QString time = query.value(1).toString();
+        QString opponentName = query.value(2).toString();
+        QString location = query.value(3).toString();
+        QString matchDayInfo = date + " - " + time + " - " + opponentName + " - " + location;
+        ui -> matchDayComboBox -> addItem(matchDayInfo);
+    }
+
+}
+
+void RemoveMatchFixture::on_confirmButton_clicked()
+{
+    QString matchDayInfo = ui -> matchDayComboBox -> currentText();
+    QStringList infoParts = matchDayInfo.split(" - ");
+
+    if (infoParts.size() > 1) {
+        QString date = infoParts.at(0);
+        QSqlDatabase db = QSqlDatabase::database("DB1");
+        QSqlQuery query(db);
+        query.prepare("DELETE FROM MatchRecord WHERE Date = :date");
+        query.bindValue(":date", date);
+
+        if (query.exec()) {
+            QMessageBox::information(this, "Success", "Match Day removed successfully\n"
+                                                      "Please reload the calendar");
+            ui -> matchDayComboBox -> removeItem(ui->matchDayComboBox->currentIndex());
+        }
+
+        else {
+            QMessageBox::critical(this, "Error", "Could not remove match day" + query.lastError().text());
+        }
     }
 
     else {
-        QMessageBox::information(this, "Remove successfully", "Removed match with the provided details.");
+        QMessageBox::critical(this, "Error", "Invalid selection.");
     }
 }

@@ -13,30 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>60</y>
-     <width>81</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Date:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>140</y>
-     <width>131</width>
+     <x>20</x>
+     <y>110</y>
+     <width>121</width>
      <height>21</height>
     </rect>
    </property>
@@ -46,83 +28,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Opponent Team Name:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="locationEdit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>180</y>
-     <width>141</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>100</y>
-     <width>91</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Time:</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="dateEdit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>141</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="displayFormat">
-    <string>dd/MM/yyyy</string>
-   </property>
-  </widget>
-  <widget class="QTimeEdit" name="timeEdit">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>100</y>
-     <width>141</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>180</y>
-     <width>81</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Location:</string>
+    <string>Match Day:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
-     <x>149</x>
-     <y>240</y>
+     <x>140</x>
+     <y>230</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -136,12 +49,12 @@
     <string>Confirm</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="opponentNameComboBox">
+  <widget class="QComboBox" name="matchDayComboBox">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>140</y>
-     <width>141</width>
+     <x>100</x>
+     <y>110</y>
+     <width>301</width>
      <height>26</height>
     </rect>
    </property>

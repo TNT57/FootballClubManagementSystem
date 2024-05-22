@@ -7,6 +7,7 @@
 #include "dateselected.h"
 #include "addmatchfixture.h"
 #include "removematchfixture.h"
+#include "editmatchfixture.h"
 
 namespace Ui {
 class MatchFixture;
@@ -29,11 +30,14 @@ private slots:
 
     void on_reloadMatchFixture_clicked();
 
+    void on_editMatchFixtureButton_clicked();
+
 private:
     Ui::MatchFixture *ui;
     DateSelected *ptrDateSelected;
     AddMatchFixture *ptrAddMatchFixture;
     RemoveMatchFixture *ptrRemoveMatchFixture;
+    EditMatchFixture *ptrEditMatchFixture;
 };
 
 #endif // MATCHFIXTURE_H
