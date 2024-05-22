@@ -1,15 +1,11 @@
 #include "simulatematch.h"
 #include "ui_simulatematch.h"
 
-SimulateMatch::SimulateMatch(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::SimulateMatch)
-{
-    ui->setupUi(this);
+SimulateMatch::SimulateMatch(QWidget *parent): QWidget(parent), ui(new Ui::SimulateMatch) {
+    ui -> setupUi(this);
 }
 
-SimulateMatch::~SimulateMatch()
-{
+SimulateMatch::~SimulateMatch() {
     delete ui;
 }
 
@@ -22,7 +18,10 @@ void SimulateMatch::set_opponentName(QString opponentName) {
 }
 
 bool SimulateMatch::checkNumPlayers() {
+    // set database
     QSqlDatabase db = QSqlDatabase::database("DB1");
+
+    // set query
     QSqlQuery query(db);
 
     // Check if there are exactly 11 players selected in each team
@@ -70,13 +69,15 @@ bool SimulateMatch::checkNumPlayers() {
 }
 
 void SimulateMatch::simulate() {
-    QSqlDatabase db = QSqlDatabase::database("DB1");
-    QSqlQuery query(db);
+    QSqlDatabase db = QSqlDatabase::database("DB1"); // set database
+    QSqlQuery query(db); // set query
+
     double ourGoals = 0;
     double opponentGoals = 0;
 
     query.prepare("SELECT Position, Apps, Goals, SavePer90 FROM Player WHERE Selected = 1");
 
+    // check if query is executed
     if (!query.exec()) {
         QMessageBox::critical(this, "Error", "Failed to simulate match");
         return;
@@ -98,6 +99,7 @@ void SimulateMatch::simulate() {
     QString queryString = QString("SELECT Position, Apps, Goals, SavePer90 FROM %1 WHERE Selected = 1").arg(opponentName);
     query.prepare(queryString);
 
+    // check if query is executed
     if (!query.exec()) {
         QMessageBox::critical(this, "Error", "Failed to simulate match");
         return;
@@ -133,7 +135,7 @@ void SimulateMatch::simulate() {
     qDebug() << "Our Goals (final): " << roundedOurGoals;
     qDebug() << "Opponent Goals (final): " << roundedOpponentGoals;
 
-
+    // display our goals and oppoenent goals
     ui -> ourGoals -> setText(QString::number(roundedOurGoals));
     ui -> opponentGoals -> setText(QString::number(roundedOpponentGoals));
     ui -> ourTeamLabel -> setText("Our Team");

@@ -1,32 +1,23 @@
 #include "removeplayer.h"
 #include "ui_removeplayer.h"
-#include <QMessageBox>
-#include <QSqlQuery>
-#include <QDebug>    // Include this header for Debug message
-#include <QSqlError> // Include this header for QSqlError
 
 //Constructor
-RemovePlayer::RemovePlayer(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::RemovePlayer)
-{
-    ui->setupUi(this);
+RemovePlayer::RemovePlayer(QWidget *parent): QWidget(parent), ui(new Ui::RemovePlayer) {
+    ui -> setupUi(this);
     populatePlayers();
 
     // Set the size of the label to be a square
-    ui->infoLabel->setFixedSize(30, 30);
+    ui -> infoLabel -> setFixedSize(30, 30);
 
     // Set the stylesheet to add a circular border around the label
-    ui->infoLabel->setStyleSheet("QLabel {"
-                                 "border: 1px solid black;"
-                                 "border-radius: 15px;" // Half of width/height
-                                 "}");
-
+    ui -> infoLabel -> setStyleSheet("QLabel {"
+                                     "border: 1px solid black;"
+                                     "border-radius: 15px;" // Half of width/height
+                                     "}");
 }
 
-//Defaul Destructor
-RemovePlayer::~RemovePlayer()
-{
+//DefaulT Destructor
+RemovePlayer::~RemovePlayer() {
     qDebug() << "~RemovePlayer";
     delete ui;
 }
@@ -40,8 +31,10 @@ void RemovePlayer::populatePlayers() {
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
+    // check if query is executed
     if (!query.exec("SELECT ShirtNumber, Name FROM Player")) {
         qDebug() << "Query execution failed: " << query.lastError();
         return;
@@ -56,28 +49,32 @@ void RemovePlayer::populatePlayers() {
 }
 
 void RemovePlayer::on_confirmButton_clicked() {
-    QString playerInfo = ui->playerNameComboBox->currentText();
+    QString playerInfo = ui -> playerNameComboBox -> currentText();
     QStringList infoParts = playerInfo.split(" - "); // Split the string to extract the shirt number and name
+
     if (infoParts.size() > 1) {
         int playerShirtNumber = infoParts.at(0).toInt(); // The player's shirt number is the first part
-        QSqlDatabase db = QSqlDatabase::database("DB1");
+        QSqlDatabase db = QSqlDatabase::database("DB1"); // set database
+
+        // set query
         QSqlQuery query(db);
         query.prepare("DELETE FROM Player WHERE ShirtNumber = :shirtNumber"); //use sql commands
         query.bindValue(":shirtNumber", playerShirtNumber);
+
+        // check if query is executed
         if (query.exec()) {
+            // update the combo box
             QMessageBox::information(this, "Success", "Player removed successfully\n"
                                                       "Please reload the table");
-            ui->playerNameComboBox->removeItem(ui->playerNameComboBox->currentIndex());
-        } else {
+            ui -> playerNameComboBox -> removeItem(ui -> playerNameComboBox -> currentIndex());
+        }
+
+        else {
             QMessageBox::critical(this, "Error", "Could not remove player: " + query.lastError().text());
         }
-    } else {
+    }
+
+    else {
         QMessageBox::critical(this, "Error", "Invalid selection.");
     }
-}
-
-
-void RemovePlayer::on_playerNameComboBox_activated()
-{
-    //Leave empty for now
 }

@@ -1,17 +1,13 @@
 #include "editmatchfixture.h"
 #include "ui_editmatchfixture.h"
 
-EditMatchFixture::EditMatchFixture(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::EditMatchFixture)
-{
-    ui->setupUi(this);
+EditMatchFixture::EditMatchFixture(QWidget *parent): QWidget(parent), ui(new Ui::EditMatchFixture) {
+    ui -> setupUi(this);
     populateDate();
     populateOpponentName();
 }
 
-EditMatchFixture::~EditMatchFixture()
-{
+EditMatchFixture::~EditMatchFixture() {
     delete ui;
 }
 
@@ -24,6 +20,7 @@ void EditMatchFixture::populateDate() {
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
     if (!query.exec("SELECT Date FROM MatchRecord")) {
@@ -32,6 +29,7 @@ void EditMatchFixture::populateDate() {
     }
 
     while (query.next()) {
+        // load to the combo box
         QString date = query.value(0).toString();
         ui -> matchDayComboBox -> addItem(date);
     }
@@ -46,6 +44,7 @@ void EditMatchFixture::populateOpponentName() {
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
     if (!query.exec("SELECT DISTINCT OpponentName FROM MatchRecord")) {
@@ -54,13 +53,13 @@ void EditMatchFixture::populateOpponentName() {
     }
 
     while (query.next()) {
+        // load data to the combo box
         QString opponentName = query.value(0).toString();
         ui -> opponentNameComboBox -> addItem(opponentName);
     }
 }
 
-void EditMatchFixture::on_confirmButton_clicked()
-{
+void EditMatchFixture::on_confirmButton_clicked() {
     QString date = ui -> matchDayComboBox -> currentText();
     QString time = ui -> timeEdit -> text();
     QString opponentName = ui -> opponentNameComboBox -> currentText();
@@ -74,6 +73,7 @@ void EditMatchFixture::on_confirmButton_clicked()
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
     // Prepare the query to update the match details for the selected date
@@ -83,18 +83,16 @@ void EditMatchFixture::on_confirmButton_clicked()
     query.bindValue(":location", location);
     query.bindValue(":date", date);
 
+    // check if query is executed
     if (!query.exec()) {
         qDebug() << "Query execution failed: " << query.lastError();
         return;
     }
 
     QMessageBox::information(this, "Update successful", "The match details have been updated successfully.");
-
 }
 
-
-void EditMatchFixture::on_matchDayComboBox_currentTextChanged(const QString &date)
-{
+void EditMatchFixture::on_matchDayComboBox_currentTextChanged(const QString &date) {
     QSqlDatabase db = QSqlDatabase::database("DB1"); // set database
 
     //Check if database is open
@@ -103,12 +101,14 @@ void EditMatchFixture::on_matchDayComboBox_currentTextChanged(const QString &dat
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
     // Prepare the query to fetch the match details for the selected date
     query.prepare("SELECT Time, OpponentName, Location FROM MatchRecord WHERE Date = :date");
     query.bindValue(":date", date);
 
+    // check if query si executed
     if (!query.exec()) {
         qDebug() << "Query execution failed: " << query.lastError();
         return;
@@ -120,9 +120,9 @@ void EditMatchFixture::on_matchDayComboBox_currentTextChanged(const QString &dat
         QString opponentName = query.value(1).toString();
         QString location = query.value(2).toString();
 
-        ui->timeEdit->setTime(time);
-        ui->opponentNameComboBox->setCurrentText(opponentName);
-        ui->locationEdit->setText(location);
+        ui -> timeEdit -> setTime(time);
+        ui -> opponentNameComboBox -> setCurrentText(opponentName);
+        ui -> locationEdit -> setText(location);
     }
 }
 

@@ -6,23 +6,23 @@
 #include "removetransferlist.h"
 #include "edittransferlist.h"
 
-class TransferList: public Player
-{
-public:
-    TransferList();
-    void addPeople();// function for add button
-    void removePeople(); // function for remove button
-    void editPeople(); // function for edit button
-    void loadTransferList(); // load the player to the transfer list
-    void reloadPeople(); // reload the transfer list
-    ~TransferList();
+class TransferList: public Player {
+    public:
+        TransferList(); // constructor
+        void addPeople();// function for add button
+        void removePeople(); // function for remove button
+        void editPeople(); // function for edit button
+        void loadTransferList(); // load the player to the transfer list
+        void reloadPeople(); // reload the transfer list
+        ~TransferList(); // destructor
 
-private:
-    QSqlQueryModel *model;
-    // pointers to other features
-    AddTransferList *ptrAddTransferList;
-    RemoveTransferList *ptrRemoveTransferList;
-    EditTransferList *ptrEditTransferList;
+    private:
+        // pointer for the model
+        QSqlQueryModel *model;
+        // pointers to other features
+        AddTransferList *ptrAddTransferList;
+        RemoveTransferList *ptrRemoveTransferList;
+        EditTransferList *ptrEditTransferList;
 };
 
 #endif // TRANSFERLIST_H

@@ -1,44 +1,45 @@
 #include "addtransferlist.h"
 #include "ui_addtransferlist.h"
 
-AddTransferList::AddTransferList(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::AddTransferList)
-{
-    ui->setupUi(this);
+AddTransferList::AddTransferList(QWidget *parent): QWidget(parent), ui(new Ui::AddTransferList) {
+    ui -> setupUi(this);
     populateTransferList();
 
     // Set the size of the label to be a square
-    ui->infoLabel->setFixedSize(30, 30);
+    ui -> infoLabel -> setFixedSize(30, 30);
 
     // Set the stylesheet to add a circular border around the label
-    ui->infoLabel->setStyleSheet("QLabel {"
-                                 "border: 1px solid black;"
-                                 "border-radius: 15px;" // Half of width/height
-                                 "}");
+    ui -> infoLabel -> setStyleSheet("QLabel {"
+                                     "border: 1px solid black;"
+                                     "border-radius: 15px;" // Half of width/height
+                                     "}");
 }
 
-AddTransferList::~AddTransferList()
-{
+AddTransferList::~AddTransferList() {
     delete ui;
 }
 
 void AddTransferList::populateTransferList() {
+    // set database
     QSqlDatabase db = QSqlDatabase::database("DB1");
 
+    // check if database is opened
     if (!db.isOpen()) {
         qDebug() << "Database connection failed!";
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
+    // check if query is executed
     if (!query.exec("SELECT ShirtNumber, Position, Name FROM Player")) {
         qDebug() << "Query execution failed: " << query.lastError();
         return;
     }
 
     while (query.next()) {
+        // load to the combo box
         int playerShirtNumber = query.value(0).toInt();
         QString position = query.value(1).toString();
         QString playerName = query.value(2).toString();
@@ -47,6 +48,7 @@ void AddTransferList::populateTransferList() {
     }
 }
 
+// validate if input  >= 0
 bool AddTransferList::validateInput() {
     int transferFee = (ui -> transferFeeEdit -> text()).toInt();
 
@@ -65,8 +67,8 @@ bool AddTransferList::validateInput() {
     return true;
 }
 
-void AddTransferList::on_confirmButton_clicked()
-{
+void AddTransferList::on_confirmButton_clicked() {
+    // validate before consider add as successful
     if (!validateInput()) {
         QMessageBox::critical(this, "Error", "Invalid transfer fee. It must be an integer and >= 0");
         return;
@@ -81,15 +83,20 @@ void AddTransferList::on_confirmButton_clicked()
         QString playerName = infoParts.at(2);
         int transferFee = (ui -> transferFeeEdit -> text()).toInt();
 
+        // set database
         QSqlDatabase db = QSqlDatabase::database("DB1");
+
+        // set query
         QSqlQuery query(db);
 
+        // add to the transfer list if player has not been added to previously
         query.prepare("INSERT INTO TransferList (ShirtNumber, Position, Name, TransferFee) VALUES (:shirtNumber, :position, :playerName, :transferFee)");
         query.bindValue(":shirtNumber", playerShirtNumber);
         query.bindValue(":position", position);
         query.bindValue(":playerName", playerName);
         query.bindValue(":transferFee", transferFee);
 
+        // check if query is executed
         if (query.exec()) {
             QMessageBox::information(this, "Success", "Player added to Transfer List successfully!");
             ui -> playerNameComboBox -> removeItem(ui -> playerNameComboBox -> currentIndex());
@@ -105,10 +112,5 @@ void AddTransferList::on_confirmButton_clicked()
         QMessageBox::critical(this, "Error", "Invalid selection");
         return;
     }
-}
-
-void AddTransferList::on_playerNameComboBox_activated()
-{
-
 }
 
