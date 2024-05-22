@@ -14,7 +14,7 @@ TeamStatistics::TeamStatistics(QWidget *parent)
     loadPlayerStats();
 
     //Change background image to blurred
-    QPixmap backgroundLabel("images/imageBlur.png");
+    QPixmap backgroundLabel("E:\\Workspace\\FootballClubManagementSystem\\images\\imageBlur.png");
     int w = ui->backgroundLabel->width();
     int h = ui->backgroundLabel->height();
     ui->backgroundLabel->setPixmap(backgroundLabel.scaled(w,h,Qt::KeepAspectRatioByExpanding)); //make image wider but keep the same ratio

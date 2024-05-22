@@ -27,7 +27,7 @@ Navigator::Navigator(QWidget *parent)
 
 
     //Set up background image for navigator
-    QPixmap navigatorBackgroundImage("images/wallpaperflare.com_wallpaper.jpg");
+    QPixmap navigatorBackgroundImage("E:\\Workspace\\FootballClubManagementSystem\\images\\wallpaperflare.com_wallpaper.jpg");
     int w = ui->navigatorBackgroundImg->width();
     int h = ui->navigatorBackgroundImg->height();
     ui->navigatorBackgroundImg->setPixmap(navigatorBackgroundImage.scaled(w,h,Qt::KeepAspectRatioByExpanding));
