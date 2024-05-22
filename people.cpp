@@ -18,14 +18,14 @@ People::People(QWidget *parent)
     ui->playerButton->setIcon(playerIcon);
     ui->playerButton->setIconSize(QSize(50, 50)); // Set the desired icon size
     ui->playerButton->setStyleSheet("QPushButton {"
-                                   "background-color: rgba(255, 255, 255, 0.25);"
-                                   "color: black;"
-                                   "border-radius: 15px;"
-                                   "}"
-                                   "QToolTip {"
-                                   "background-color: white;"
-                                   "color: black;"
-                                   "}");
+                                    "background-color: rgba(255, 255, 255, 0.25);"
+                                    "color: black;"
+                                    "border-radius: 15px;"
+                                    "}"
+                                    "QToolTip {"
+                                    "background-color: white;"
+                                    "color: black;"
+                                    "}");
 
 
     // Add icon to staffButton
@@ -34,14 +34,14 @@ People::People(QWidget *parent)
     ui->staffButton->setIcon(staffIcon);
     ui->staffButton->setIconSize(QSize(50, 50)); // Set the desired icon size
     ui->staffButton->setStyleSheet("QPushButton {"
-                                    "background-color: rgba(255, 255, 255, 0.25);"
-                                    "color: black;"
+                                   "background-color: rgba(255, 255, 255, 0.25);"
+                                   "color: black;"
                                    "border-radius: 15px;"
-                                    "}"
-                                    "QToolTip {"
-                                    "background-color: white;"
-                                    "color: black;"
-                                    "}");
+                                   "}"
+                                   "QToolTip {"
+                                   "background-color: white;"
+                                   "color: black;"
+                                   "}");
 
 
     //Change the title word color to white
@@ -58,14 +58,14 @@ People::People(QWidget *parent)
 
 
     ui->transferListButton->setStyleSheet("QPushButton {"
-                                    "background-color: rgba(255, 255, 255, 0.25);"
-                                    "color: black;"
-                                    "border-radius: 15px;"
-                                    "}"
-                                    "QToolTip {"
-                                    "background-color: white;"
-                                    "color: black;"
-                                    "}");
+                                          "background-color: rgba(255, 255, 255, 0.25);"
+                                          "color: black;"
+                                          "border-radius: 15px;"
+                                          "}"
+                                          "QToolTip {"
+                                          "background-color: white;"
+                                          "color: black;"
+                                          "}");
 
 
     // Set the tooltip for the label
