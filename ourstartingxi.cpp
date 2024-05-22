@@ -12,6 +12,7 @@ OurStartingXI::~OurStartingXI() {
 }
 
 void OurStartingXI::loadOurXI() {
+    // set database
     QSqlDatabase db = QSqlDatabase::database("DB1");
     model = new QSqlQueryModel();
 

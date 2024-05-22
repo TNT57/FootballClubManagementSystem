@@ -5,6 +5,7 @@ Staff::Staff(QWidget* parent): TeamList(parent) {
 }
 
 void Staff::loadStaff() {
+    // set database
     QSqlDatabase db = QSqlDatabase::database("DB1");
     model = new QSqlQueryModel();
 
