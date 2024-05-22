@@ -7,6 +7,19 @@ EditTransferList::EditTransferList(QWidget *parent)
 {
     ui->setupUi(this);
     populateTransferList();
+
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
+
 }
 
 EditTransferList::~EditTransferList()
@@ -62,7 +75,7 @@ bool EditTransferList::validateInput() {
 void EditTransferList::on_confirmButton_clicked()
 {
     if (!validateInput()) {
-        QMessageBox::critical(this, "Error", "Invalid transfer fee. It must be an integer and >= 0");
+        QMessageBox::critical(this, "Error", "Invalid transfer fee. It must be greater or equal to $0");
         return;
     }
 
@@ -81,7 +94,7 @@ void EditTransferList::on_confirmButton_clicked()
         query.bindValue(":transferFee", transferFee);
 
         if (query.exec()) {
-            QMessageBox::information(this, "Success", "Player's transfer fee updated successfully!");
+            QMessageBox::information(this, "Success", "Player's transfer fee updated successfully! Click reload for latest updates!");
             ui -> playerNameComboBox -> removeItem(ui -> playerNameComboBox -> currentIndex());
         }
 

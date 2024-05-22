@@ -15,6 +15,19 @@ AddMatchFixture::AddMatchFixture(QWidget *parent)
     ui->opponentTeamNameComboBox->addItems(teams);
     ui -> dateEdit -> setDisplayFormat("dd/MM/yyyy");
     ui -> dateEdit -> setDate(QDate::currentDate());
+
+    //Set up stylesheet for info label
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                               "border: 1px solid black;"
+                               "border-radius: 15px;" // Half of width/height
+                               "}");
+
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("This is an information label.");
 }
 
 AddMatchFixture::~AddMatchFixture()

@@ -17,7 +17,7 @@ MatchFixture::MatchFixture(QWidget *parent)
     // Set the text of the button to "i"
     ui->label_2->setText("i");
     // Set the tooltip for the label
-    ui->label_2->setToolTip("This is an information label.");
+    ui->label_2->setToolTip("Click on the day to see the match detail!");
 
     // Set the size of the label to be a square
     ui->label_2->setFixedSize(30, 30);

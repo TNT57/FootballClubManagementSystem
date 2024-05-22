@@ -9,8 +9,8 @@ Navigator::Navigator(QWidget *parent)
     ui->setupUi(this);
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    //database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
-    database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
+    database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
+    //database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
     //database.setDatabaseName("/Users/tom/PlayerManagement.db");
 
     // check the database is working or not
@@ -84,6 +84,19 @@ Navigator::Navigator(QWidget *parent)
     ui->label_2->setStyleSheet("QLabel {"
                                "color: white;"
                                "}");
+
+
+    // Set the tooltip for the label
+    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
+
+    // Set the size of the label to be a square
+    ui->infoLabel->setFixedSize(30, 30);
+
+    // Set the stylesheet to add a circular border around the label
+    ui->infoLabel->setStyleSheet("QLabel {"
+                                 "border: 1px solid black;"
+                                 "border-radius: 15px;" // Half of width/height
+                                 "}");
 
 
 }
