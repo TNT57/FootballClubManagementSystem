@@ -40,7 +40,7 @@
   <widget class="QPushButton" name="removeMatchFixtureButton">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>270</x>
      <y>190</y>
      <width>91</width>
      <height>41</height>
@@ -74,7 +74,7 @@
   <widget class="QPushButton" name="reloadMatchFixture">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>170</x>
      <y>240</y>
      <width>80</width>
      <height>31</height>
@@ -140,11 +140,19 @@
   <widget class="QPushButton" name="editMatchFixtureButton">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>160</x>
      <y>190</y>
      <width>90</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Edit the detail of the match scheduled</string>
    </property>
    <property name="text">
     <string>Edit</string>

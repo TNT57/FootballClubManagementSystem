@@ -6,7 +6,7 @@ StartingList::StartingList(QWidget *parent)
     , ui(new Ui::StartingList)
 {
     ui->setupUi(this);
-      database = QSqlDatabase::database("DB1");
+    database = QSqlDatabase::database("DB1");
 
     // Set the size of the label to be a square
     ui->infoLabel->setFixedSize(30, 30);
