@@ -24,6 +24,7 @@ public:
     ~Navigator();
 
 private slots:
+    // open ui of features when click on each button
     void on_peopleButton_clicked();
 
     void on_matchButton_clicked();
@@ -31,7 +32,8 @@ private slots:
     void on_teamButton_clicked();
 
 private:
-    Ui::Navigator *ui;
+    Ui::Navigator *ui; // pointer to initialize the ui of the main window
+    // pointer to other features
     QSqlDatabase database;
     People *ptrPeople;
     MatchFixture *ptrMatchFixture;

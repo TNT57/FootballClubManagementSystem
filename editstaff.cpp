@@ -21,7 +21,7 @@ void EditStaff :: loadStaff(){
     if (!query.exec("SELECT StaffID FROM Staff")) {
         return;
     }
-
+    // add the staff id into the staff id combo box
     while (query.next()) {
         ui->staffIdComboBox->addItem(query.value("StaffID").toString());
     }
@@ -47,7 +47,7 @@ void EditStaff::on_confirmButton_clicked()
     }
 }
 bool EditStaff::validateInput(){
-    // all the lines must be filled
+    // check all the lines are filled
     QString newStaffId = ui->newStaffIdLineEdit->text();
     QString salary = ui->salaryLineEdit->text();
     if (ui->nameLineEdit->text().isEmpty() ||
@@ -57,7 +57,7 @@ bool EditStaff::validateInput(){
         QMessageBox::warning(this, "Input error", "Please fill in all lines");
         return false;
     }
-    // New StaffId should be unique and positive integer only
+
     if (!ui->newStaffIdLineEdit->text().isEmpty()) {
         bool ok;
         ui->newStaffIdLineEdit->text().toInt(&ok);
@@ -66,6 +66,7 @@ bool EditStaff::validateInput(){
             return false;
         }
     }
+    // check if the new staff id is unique or not
     bool ok;
     int newStaffIdInt = newStaffId.toInt(&ok);
     QSqlQuery query;
@@ -76,7 +77,7 @@ bool EditStaff::validateInput(){
         return false;
     }
 
-    // Salary should be positive integer only
+    // check if Salary is a positive integer
     int salaryInt = salary.toInt(&ok);
     if (!ok || salaryInt <= 0) {
         QMessageBox::warning(this, "Input error", "Salary must be a positive integer");
@@ -89,7 +90,7 @@ bool EditStaff::validateInput(){
 
 void EditStaff::on_staffIdComboBox_currentTextChanged(const QString &staffId)
 {
-    // show the information of the stat based on their id
+    // show the information of the stat based on their id the user choose
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
     query.prepare("SELECT * FROM Staff WHERE StaffID = :staffId");

@@ -81,7 +81,8 @@ void EditTransferList::on_confirmButton_clicked()
         query.bindValue(":transferFee", transferFee);
 
         if (query.exec()) {
-            QMessageBox::information(this, "Success", "Player's transfer fee updated successfully!");
+            QMessageBox::information(this, "Success", "Player's transfer fee updated successfully!\n"
+                                                      "Please reload the table");
             ui -> playerNameComboBox -> removeItem(ui -> playerNameComboBox -> currentIndex());
         }
 

@@ -19,6 +19,7 @@ void AddStaff::on_confirmButton_clicked()
     if (validateInput() == false ) {
         return;
     }
+    //initialise variable to store the text typed by user
     QString staffId = ui->staffIdLineEdit->text();
     QString name = ui-> nameLineEdit-> text();
     QString dob = ui-> dobLineEdit -> text();
@@ -26,13 +27,21 @@ void AddStaff::on_confirmButton_clicked()
     QString salary = ui -> salaryLineEdit -> text();
     // initialize database and query method to take data from the database
     QSqlDatabase db = QSqlDatabase::database("DB1");
+    // insert the info of new staff into the database
     QSqlQuery query (db);
     query.prepare("insert into Staff(StaffID, Name, DOB, Role, Salary)"
                   "values('"+staffId + "','" + name + "','" + dob + "','" + role + "','" + salary + "')");
     query.exec();
     query.finish();
     query.clear();
-    QMessageBox::information(this, "Note", "Added succesfully!");
+    QMessageBox::information(this, "Note", "Added succesfully!\n"
+                                            "Please reload the staff table");
+    // clear the line after user add staff succesfully
+    ui->staffIdLineEdit->clear();
+    ui->nameLineEdit->clear();
+    ui->dobLineEdit->clear();
+    ui->roleLineEdit->clear();
+    ui->salaryLineEdit->clear();
 }
 
 bool AddStaff::validateInput(){
@@ -41,7 +50,7 @@ bool AddStaff::validateInput(){
     QString dob = ui-> dobLineEdit -> text();
     QString role = ui -> roleLineEdit -> text();
     QString salary = ui -> salaryLineEdit -> text();
-    // input should not be blanked
+    // check if the text line is blanked
     if (staffId == "" || name == "" || dob == "" || role == "" || salary == ""){
         QMessageBox::critical(this, "Alert", "not blanked");
         return false;
@@ -54,6 +63,7 @@ bool AddStaff::validateInput(){
     while (query.next()){
         QString existedId = query.value(0).toString();
         if(staffId == existedId){
+            // show the error message
             QMessageBox::critical(this, "Error", "Staff ID already existed!");
             query.finish();
             query.clear();
@@ -64,19 +74,16 @@ bool AddStaff::validateInput(){
     bool ok;
     int value = staffId.toInt(&ok);
     if (ok && value > 0) {
-        // The input is a positive integer. You can use the integer value here.
         qDebug() << "The input is a positive integer: " << value;
     } else {
-        // The input is not a positive integer. You might want to show an error message here.
+        // The input is not a positive integer. Show an error message
         QMessageBox::critical(this, "Invalid input", "Staff id must be a positive integer.");
         return false;
     }
     int value2 = salary.toInt(&ok);
     if (ok && value2 > 0) {
-        // The input is a positive integer. You can use the integer value here.
         qDebug() << "The input is a positive integer: " << value2;
     } else {
-        // The input is not a positive integer. You might want to show an error message here.
         QMessageBox::critical(this, "Invalid input", "Salary must be a positive integer.");
         return false;
     }

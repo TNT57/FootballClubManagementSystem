@@ -62,6 +62,7 @@ void AddMatchFixture::on_confirmButton_clicked()
                                      + "Opponent Team Name: " + opponentTeamName
                                      + "\n"
                                        "Location: "
-                                     + location + "\n");
+                                     + location + "\n"
+                                 + "Please reload the calendar");
     }
 }
