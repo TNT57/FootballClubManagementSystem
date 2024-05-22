@@ -56,6 +56,16 @@ People::People(QWidget *parent)
     //Change button shape and opacity
 
 
+    ui->transferListButton->setStyleSheet("QPushButton {"
+                                    "background-color: rgba(255, 255, 255, 0.25);"
+                                    "color: black;"
+                                    "border-radius: 15px;"
+                                    "}"
+                                    "QToolTip {"
+                                    "background-color: white;"
+                                    "color: black;"
+                                    "}");
+
 
     // Set the tooltip for the label
     ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
