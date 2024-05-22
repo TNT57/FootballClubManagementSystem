@@ -43,6 +43,6 @@ void Staff::removePeople() {
 }
 
 // reload the table
-void Staff :: reloadPeople() {
+void Staff::reloadPeople() {
     loadStaff();
 }
