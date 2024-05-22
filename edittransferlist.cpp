@@ -1,37 +1,35 @@
 #include "edittransferlist.h"
 #include "ui_edittransferlist.h"
 
-EditTransferList::EditTransferList(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::EditTransferList)
-{
-    ui->setupUi(this);
+EditTransferList::EditTransferList(QWidget *parent): QWidget(parent), ui(new Ui::EditTransferList) {
+    ui -> setupUi(this);
     populateTransferList();
 
     // Set the size of the label to be a square
-    ui->infoLabel->setFixedSize(30, 30);
+    ui -> infoLabel -> setFixedSize(30, 30);
 
     // Set the stylesheet to add a circular border around the label
-    ui->infoLabel->setStyleSheet("QLabel {"
-                                 "border: 1px solid black;"
-                                 "border-radius: 15px;" // Half of width/height
-                                 "}");
-
+    ui -> infoLabel -> setStyleSheet("QLabel {"
+                                     "border: 1px solid black;"
+                                     "border-radius: 15px;" // Half of width/height
+                                     "}");
 }
 
-EditTransferList::~EditTransferList()
-{
+EditTransferList::~EditTransferList() {
     delete ui;
 }
 
 void EditTransferList::populateTransferList() {
+    // set database
     QSqlDatabase db = QSqlDatabase::database("DB1");
 
+    // check if database is opened
     if (!db.isOpen()) {
         qDebug() << "Database connection failed!";
         return;
     }
 
+    // set query
     QSqlQuery query(db);
 
     if (!query.exec("SELECT ShirtNumber, Position, Name FROM TransferList")) {
@@ -40,18 +38,17 @@ void EditTransferList::populateTransferList() {
     }
 
     while (query.next()) {
+        // load data to the combo box
         int playerShirtNumber = query.value(0).toInt();
         QString position = query.value(1).toString();
         QString playerName = query.value(2).toString();
-        //int transferFee = query.value(3).toInt();
-        //ui -> transferFeeEdit -> setText(QString::number(transferFee));
-        //QString playerInfo = QString::number(playerShirtNumber) + " - " + position + " - " + playerName + " - " + QString::number(transferFee);
         QString playerInfo = QString::number(playerShirtNumber) + " - " + position + " - " + playerName;
         ui -> playerNameComboBox -> addItem(playerInfo);
     }
 }
 
 bool EditTransferList::validateInput() {
+    // validate if transfer fee is >= 0
     int transferFee = (ui -> transferFeeEdit -> text()).toInt();
 
     if (transferFee < 0) {
@@ -69,8 +66,8 @@ bool EditTransferList::validateInput() {
     return true;
 }
 
-void EditTransferList::on_confirmButton_clicked()
-{
+void EditTransferList::on_confirmButton_clicked() {
+    // validate before consider edit as successful
     if (!validateInput()) {
         QMessageBox::critical(this, "Error", "Invalid transfer fee. It must be greater or equal to $0");
         return;
@@ -83,6 +80,7 @@ void EditTransferList::on_confirmButton_clicked()
         int playerShirtNumber = infoParts.at(0).toInt();
         int transferFee = (ui -> transferFeeEdit -> text()).toInt();
 
+        // set database and query
         QSqlDatabase db = QSqlDatabase::database("DB1");
         QSqlQuery query(db);
 
@@ -90,6 +88,7 @@ void EditTransferList::on_confirmButton_clicked()
         query.bindValue(":shirtNumber", playerShirtNumber);
         query.bindValue(":transferFee", transferFee);
 
+        // check if query is executed
         if (query.exec()) {
             QMessageBox::information(this, "Success", "Player's transfer fee updated successfully!\n"
                                                       "Please reload the table");
@@ -108,19 +107,15 @@ void EditTransferList::on_confirmButton_clicked()
     }
 }
 
-void EditTransferList::on_playerNameComboBox_activated()
-{
-
-}
-
-
 void EditTransferList::on_playerNameComboBox_currentTextChanged(const QString &playerInfo)
 {
+    // display other features different according to playerInfo selected
     QStringList infoParts = playerInfo.split(" - ");
 
     if (infoParts.size() > 1) {
         int playerShirtNumber = infoParts.at(0).toInt();
 
+        // set database and query
         QSqlDatabase db = QSqlDatabase::database("DB1");
         QSqlQuery query(db);
 
@@ -136,5 +131,4 @@ void EditTransferList::on_playerNameComboBox_currentTextChanged(const QString &p
             qDebug() << "Query execution failed!" << query.lastError();
         }
     }
-
 }

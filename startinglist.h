@@ -11,27 +11,25 @@
 #include <QTableView>
 
 namespace Ui {
-class StartingList;
+    class StartingList;
 }
 
-class StartingList : public QWidget
-{
+class StartingList: public QWidget {
     Q_OBJECT
 
-public:
-    explicit StartingList(QWidget *parent = nullptr);
-    virtual void choosePlayer() = 0;
-    virtual void reloadPlayer() = 0;
-    ~StartingList();
+    public:
+        explicit StartingList(QWidget *parent = nullptr); // constructor
+        virtual void choosePlayer() = 0; // virtual function for choose XI (our and opponent team)
+        virtual void reloadPlayer() = 0; // virtual function for reload XI (our and opponent team)
+        ~StartingList(); // destructor
 
-private slots:
-    void on_chooseStartingButton_clicked();
+    private slots:
+        void on_chooseStartingButton_clicked(); // pop up choose starting XI
+        void on_reloadButton_clicked(); // reload starting XI
 
-    void on_reloadButton_clicked();
-
-protected:
-    Ui::StartingList *ui;
-    QSqlDatabase database;
+    protected:
+        Ui::StartingList *ui; // pointer for the UI
+        QSqlDatabase database; // database
 };
 
 #endif // STARTINGLIST_H

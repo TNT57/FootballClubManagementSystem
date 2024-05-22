@@ -8,24 +8,22 @@
 #include <QSqlError>
 
 namespace Ui {
-class RemoveTransferList;
+    class RemoveTransferList;
 }
 
-class RemoveTransferList : public QWidget
-{
+class RemoveTransferList: public QWidget {
     Q_OBJECT
 
-public:
-    explicit RemoveTransferList(QWidget *parent = nullptr);
-    void populateTransferList();
-    ~RemoveTransferList();
+    public:
+        explicit RemoveTransferList(QWidget *parent = nullptr); // constructor
+        void populateTransferList(); // load data to the combo box
+        ~RemoveTransferList(); // destructor
 
-private slots:
-    void on_confirmButton_clicked();
-    void on_playerNameComboBox_activated();
+    private slots:
+        void on_confirmButton_clicked(); // confirm removing transfer list
 
-private:
-    Ui::RemoveTransferList *ui;
+    private:
+        Ui::RemoveTransferList *ui; // pointer to the UI
 };
 
 #endif // REMOVETRANSFERLIST_H

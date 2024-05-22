@@ -7,26 +7,25 @@
 #include <QMessageBox>
 
 namespace Ui {
-class SimulateMatch;
+    class SimulateMatch;
 }
 
-class SimulateMatch : public QWidget
-{
+class SimulateMatch: public QWidget {
     Q_OBJECT
 
-public:
-    explicit SimulateMatch(QWidget *parent = nullptr);
-    ~SimulateMatch();
+    public:
+        explicit SimulateMatch(QWidget *parent = nullptr); // constructor
+        ~SimulateMatch(); // destructor
 
-    QString get_opponentName();
-    void set_opponentName(QString opponentName);
-    bool checkNumPlayers();
-    void simulate();
-    friend class TestSimulateMatch;
+        QString get_opponentName(); // getter for opponent name
+        void set_opponentName(QString opponentName); // setter for opponent name
+        bool checkNumPlayers(); // check if there are EXACTLY 11 players for each team (EXACTLY 1 GK for each team)
+        void simulate(); // simulate the result
+        friend class TestSimulateMatch; // for testing
 
-private:
-    Ui::SimulateMatch *ui;
-    QString opponentName = "RealMadrid";
+    private:
+        Ui::SimulateMatch *ui; // pointer for the UI
+        QString opponentName = "RealMadrid"; // init to avoid error
 };
 
 #endif // SIMULATEMATCH_H
