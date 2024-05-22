@@ -9,17 +9,19 @@
 class Staff : public TeamList
 {
 public:
+    // constructor for the ui inherited from the TeamList
     Staff(QWidget *parent = nullptr);
-    void addPeople();
-    void removePeople();
-    void editPeople();
-    void loadStaff();
-    void reloadPeople();
+    void addPeople(); // add staff to the Staff database (virtual)
+    void removePeople(); // remove staff from the Staff database (virtual)
+    void editPeople(); // edit the information of each staff (virtual)
+    void loadStaff(); // load the staff from the database
+    void reloadPeople(); // reload the staff table (virtual)
     ~Staff();
 private:
+     QSqlQueryModel *model;
+    // pointers to the ui of each features
     AddStaff* ptrAddStaff;
     EditStaff *ptrEditStaff;
-    QSqlQueryModel *model;
     RemoveStaff* ptrRemoveStaff;
 };
 

@@ -11,26 +11,16 @@ TestSimulateMatch ::~TestSimulateMatch()
 {
     delete simulateMatch;
 }
-void TestSimulateMatch::test_checkNumPlayers()
-{
-    SimulateMatch match;
-    match.set_opponentName("Arsenal");
-
-    // Assuming that there are 11 players selected in each team
-    QVERIFY(match.checkNumPlayers() == true);
-
-    // Assuming that there are not 11 players selected in each team
-    // You should change the selected players in the database before this test
-    QVERIFY(match.checkNumPlayers() == false);
-}
 
 void TestSimulateMatch::test_simulate()
 {
     SimulateMatch match;
+    // choose the opponent team
     match.set_opponentName("Arsenal");
 
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
+    // select the first 11 players from our team
     query.prepare("UPDATE Player SET Selected = 1 LIMIT 11");
     if (!query.exec()) {
         qDebug() << "Failed to select players: ";
@@ -41,7 +31,7 @@ void TestSimulateMatch::test_simulate()
     if (!query.exec()) {
         qDebug() << "Failed to select players: " ;
     }
-
+    // simulate the match
     match.simulate();
 
     // Check that the goals are positive integers

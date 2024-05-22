@@ -22,19 +22,16 @@ void TestRemovePlayer::cleanupTestCase()
 
 void TestRemovePlayer::test_populatePlayers()
 {
-    // Test case: Check if populatePlayers function loads players into the combo box
-    // This test case involves database operations
-
-    // 1. Set up the database and insert a known player with all his statistics
+ // insert a new player to the database
     QSqlDatabase database = QSqlDatabase::database("DB1"); // Get the database.
 
     QSqlQuery query(database);
     query.exec("INSERT INTO Player (ShirtNumber, Position, Name, Goals, Apps, Assists, PassCmpPer90, TacklePer90, DribblePer90, YellowCard, RedCard) VALUES (1000, 'CAM', 'Test Player', 10, 20, 10, 10, 10, 10, 2, 1)");
 
-    // 2. Call removePlayer->populatePlayers()
+   // call the function to see the staff in the combo box
     removePlayer->populatePlayers();
 
-    // 3. Check if the combo box contains the player you inserted into the database
+    // Check if the combo box contains the player you inserted into the database
     bool containsInsertedPlayer = false;
     for(int i = 0; i < removePlayer->ui->playerNameComboBox->count(); i++)
     {
@@ -46,28 +43,26 @@ void TestRemovePlayer::test_populatePlayers()
     }
     QCOMPARE(containsInsertedPlayer, true);
 
-    // 4. Clean up the database
+    // Clean up the database
     query.exec("DELETE FROM Player WHERE ShirtNumber = 1000");
 }
 
 void TestRemovePlayer::test_on_confirmButton_clicked()
 {
-    // Test case: Check if on_confirmButton_clicked function removes the selected player
-    // This test case involves database operations
 
-    // 1. Set up the database and insert a known player with all his statistics
+    // add the new player to the database
     QSqlDatabase database = QSqlDatabase::database("DB1"); // Get the database.
 
     QSqlQuery query(database);
     query.exec("INSERT INTO Player (ShirtNumber, Position, Name, Goals, Apps, Assists, PassCmpPer90, TacklePer90, DribblePer90, YellowCard, RedCard) VALUES (1000, 'CAM', 'Test Player', 10, 20, 10, 10, 10, 10, 2, 1)");
 
-    // 2. Set the current text of the combo box to the player you inserted
+    // Set the current text of the combo box to the new player
     removePlayer->ui->playerNameComboBox->setCurrentText("1000 - Test Player");
 
-    // 3. Call removePlayer->on_confirmButton_clicked()
+    // Remove the new plaeyr
     removePlayer->on_confirmButton_clicked();
 
-    // 4. Check if the player is removed from the database
+    // Check if the player is removed from the database
     query.prepare("SELECT * FROM Player WHERE ShirtNumber = 1000");
     query.exec();
     bool playerRemoved = !query.next();

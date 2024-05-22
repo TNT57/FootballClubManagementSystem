@@ -20,6 +20,7 @@ Navigator::Navigator(QWidget *parent)
     else{
         qDebug() << "Database open successfully";
     }
+    //initializd pointer to other features
     ptrPeople = new People();
     ptrMatchFixture = new MatchFixture();
     ptrTeamStatistics = new TeamStatistics();
@@ -110,6 +111,7 @@ Navigator::Navigator(QWidget *parent)
 
 Navigator::~Navigator()
 {
+    //delete the pointers
     delete ui;
     delete ptrPeople;
     delete ptrMatchFixture;
@@ -119,21 +121,21 @@ Navigator::~Navigator()
 
 }
 
-// open people management feature
+// open people management feature ui
 void Navigator::on_peopleButton_clicked()
 {
     ptrPeople -> setWindowTitle("People");
     ptrPeople -> show();
 }
 
-
+// opent the match fixture feature ui
 void Navigator::on_matchButton_clicked()
 {
     ptrMatchFixture -> setWindowTitle("Match Fixture");
     ptrMatchFixture -> show();
 }
 
-
+// open the team statistic ui
 void Navigator::on_teamButton_clicked()
 {
     ptrTeamStatistics -> setWindowTitle("Team Statistics");

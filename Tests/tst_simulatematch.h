@@ -15,7 +15,6 @@ public:
    ~TestSimulateMatch();
 
 private slots:
-    void test_checkNumPlayers();
     void test_simulate();
 
 private:

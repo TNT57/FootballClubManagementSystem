@@ -20,6 +20,7 @@ public:
     ~People();
 
 private slots:
+    // open the ui of the features when click on each button
     void on_playerButton_clicked();
 
     void on_staffButton_clicked();
@@ -27,7 +28,8 @@ private slots:
     void on_transferListButton_clicked();
 
 private:
-    Ui::People *ui;
+    Ui::People *ui; // initialize the ui of the People class
+    // pointer to other features
     Player *ptrPlayer;
     Staff *ptrStaff;
     TransferList *ptrTransferList;

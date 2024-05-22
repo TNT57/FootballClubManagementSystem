@@ -8,6 +8,7 @@ People::People(QWidget *parent)
     , ui(new Ui::People)
 {
     ui->setupUi(this);
+    // pointers to other features
     ptrPlayer = new Player();
     ptrStaff = new Staff();
     ptrTransferList = new TransferList();
@@ -92,19 +93,20 @@ People::~People()
     delete ptrTransferList;
 }
 
+//open player table feature
 void People::on_playerButton_clicked()
 {
     ptrPlayer -> setWindowTitle("Player");
     ptrPlayer -> show();
 }
-
+//open staff table feature
 void People::on_staffButton_clicked()
 {
     ptrStaff -> setWindowTitle("Staff");
     ptrStaff -> show();
 }
 
-
+//open transfer list feature
 void People::on_transferListButton_clicked()
 {
     ptrTransferList -> setWindowTitle("Transfer List");

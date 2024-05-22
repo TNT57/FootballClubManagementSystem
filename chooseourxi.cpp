@@ -83,6 +83,7 @@ void ChooseOurXI::on_confirmButton_clicked()
     }
 
     if (success) {
-        QMessageBox::information(this, "Update Successfully", "Players are successfully selected");
+        QMessageBox::information(this, "Update Successfully", "Players are successfully selected\n"
+                                                              "Please reload the table");
     }
 }

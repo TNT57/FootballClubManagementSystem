@@ -68,7 +68,8 @@ void RemoveStaff::on_staffRemoveConfirmButton_clicked()
 
         //Pop up message for situations
         if (query.exec()){
-            QMessageBox::information(this, "Success", "Staff removed successfully");
+            QMessageBox::information(this, "Success", "Staff removed successfully\n"
+                                                       "Please reload the table");
             ui->staffNameComboBox->removeItem(ui->staffNameComboBox->currentIndex());
         } else {
             QMessageBox::critical(this, "Error", "Could not remove staff " + query.lastError().text());        }

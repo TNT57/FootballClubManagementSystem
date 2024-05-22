@@ -7,6 +7,7 @@ EditPlayer::EditPlayer(QWidget *parent)
 {
     ui->setupUi(this);
     loadPlayer();
+    // load the position of the player to the combo box from the beginning
     QStringList positions = {"CF", "RW", "LW", "CAM", "CM", "CDM", "LB", "CB", "RB", "GK"};
     ui->positionComboBox->addItems(positions);
     loadPlayerPosition();
@@ -24,6 +25,7 @@ EditPlayer::EditPlayer(QWidget *parent)
 void EditPlayer::loadPlayerPosition(){
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
+    // query the position from the database but in the order of the shirtnumber
     query.prepare("SELECT Position FROM Player ORDER BY ShirtNumber LIMIT 1");
     if (query.exec() && query.next()) {
         // take the position that match the shirt number
@@ -35,6 +37,7 @@ void EditPlayer::loadPlayerPosition(){
 void EditPlayer::loadPlayer(){
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
+    // query the shirtnumber in order
     query.prepare("SELECT ShirtNumber FROM Player ORDER BY ShirtNumber");
     if (query.exec()) {
         ui->shirtNumberComboBox->clear();
@@ -56,6 +59,7 @@ void EditPlayer::on_shirtNumberComboBox_currentTextChanged(const QString &shirtN
 {
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
+    //query all the statistic of the player
     query.prepare("SELECT * FROM Player WHERE ShirtNumber = :shirtNumber");
     query.bindValue(":shirtNumber", shirtNumber.toInt());
     // set the statistic of player to the line edits
@@ -81,7 +85,7 @@ void EditPlayer::on_shirtNumberComboBox_currentTextChanged(const QString &shirtN
             ui->savePer90LineEdit->setText(query.value("SavePer90").toString());
             ui->cleanSheetLineEdit->setText(query.value("CleanSheet").toString());
             ui->saveRateLineEdit->setText(query.value("SavePercentage").toString());
-        } else {
+        } else { // hide the stats line edit of the GK
             ui->savePer90LineEdit->hide();
             ui->cleanSheetLineEdit->hide();
             ui->saveRateLineEdit->hide();
@@ -123,6 +127,7 @@ void EditPlayer::on_confirmButton_clicked()
 
         if (ui->positionComboBox->currentText() != "GK") {
             QSqlQuery query(db);
+            // if change the position from GK to other position, the specific stats of GK will dissapear
             query.prepare("UPDATE Player SET SavePer90 = NULL, CleanSheet = NULL, SavePercentage = NULL WHERE ShirtNumber = :oldShirtNumber");
             query.bindValue(":oldShirtNumber", ui->shirtNumberComboBox->currentText().toInt());
             if (!query.exec()) {
@@ -131,19 +136,25 @@ void EditPlayer::on_confirmButton_clicked()
             }
         }
 
-        QMessageBox::information(this, "Update successful", "Player data updated successfully");
+        QMessageBox::information(this, "Update successful", "Player data updated successfully\n"
+                                                             "Please reload the player table");
     }
 }
 
 bool EditPlayer::validateInput(){
     int oldShirtNumber = ui->shirtNumberComboBox->currentText().toInt();
     QString newShirtNumberText = ui->newShirtNumberLineEdit->text();
-    // check the input of new shirt number
+    // check the input of new shirt number is unique and positive integer
     if (!newShirtNumberText.isEmpty()) {
         bool ok;
         int newShirtNumber = newShirtNumberText.toInt(&ok);
         if (newShirtNumber <= 0 || newShirtNumber == oldShirtNumber||!ok) {
             QMessageBox::warning(this, "Input error", "New shirt number must be a positive integer and different from the old shirt number");
+            return false;
+        }
+        // check if the new shirt number is less than 99 or not
+        if (newShirtNumber >= 99){
+             QMessageBox::warning(this, "Input error", "New shirt number must be less than 99");
             return false;
         }
     }
@@ -159,8 +170,9 @@ bool EditPlayer::validateInput(){
     QString red = ui->redLineEdit->text();
     QString savePer90;
     QString saveRate;
-    // all stats must be filled
+    // check if all stats are filled or not
     QStringList stats = {app, goal, assist, yellow, red, passPer90, tacklePer90, dribblePer90};
+    // if user choose gk as the position
     if (ui->positionComboBox->currentText() == "GK"){
         cleanSheet = ui->cleanSheetLineEdit->text();
         savePer90 = ui->savePer90LineEdit->text();
@@ -173,7 +185,7 @@ bool EditPlayer::validateInput(){
             return false;
         }
     }
-    // check the input of goal, assist, apps, clean sheet
+    // check the input of goal, assist, apps, clean sheet are all positive integer
     bool ok;
     QStringList positiveIntegers = {app, goal, assist, yellow, red};
     if (position == "GK"){
@@ -219,7 +231,7 @@ void EditPlayer::on_positionComboBox_currentTextChanged(const QString &position)
         ui->label_12->show();
         ui->label_13->show();
         ui->label_14->show();
-    } else {
+    } else { // hide the line of gk specific stat if user not choose position gk
         ui->savePer90LineEdit->hide();
         ui->cleanSheetLineEdit->hide();
         ui->saveRateLineEdit->hide();

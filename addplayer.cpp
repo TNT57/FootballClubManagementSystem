@@ -38,6 +38,7 @@ void AddPlayer::on_confirmButton_clicked()
     if (validateInput() == false ) {
         return;
     }
+    //initialise variable to store the text typed by user
     QString shirtNumber = ui->shirtLineEdit->text();
     QString position = ui->positionComboBox->currentText();
     QString name = ui->nameLineEdit->text();
@@ -50,21 +51,39 @@ void AddPlayer::on_confirmButton_clicked()
     QString yellow = ui->yellowLineEdit->text();
     QString red = ui->redLineEdit->text();
     QString savePer90, cleanSheet, saveRate;
-
+    // store the specific stats of the goalkeeper
     if (position == "GK"){
         savePer90 = ui->savePer90LineEdit->text();
         cleanSheet = ui->cleanSheet->text();
-        saveRate = ui->savePer90LineEdit->text();
+        saveRate = ui->saveRateLineEdit->text();
     }
     // initialize database and query method to take data from the database
     QSqlDatabase db = QSqlDatabase::database("DB1");
     QSqlQuery query(db);
+    // player statistic add to the Player database
     query.prepare("insert into Player(ShirtNumber, Position, Name, Apps, Goals, Assists, PassCmpPer90, TacklePer90, DribblePer90, YellowCard, RedCard, SavePer90, CleanSheet, SavePercentage) "
                   "values('"+shirtNumber+"', '"+position+"', '"+name+"', '"+app+"', '"+goal+"', '"+assist+"', '"+passPer90+"', '"+tacklePer90+"', '"+dribblePer90+"', '"+yellow+"', '"+red+"', '"+savePer90+"', '"+cleanSheet+"', '"+saveRate+"')");
     query.exec();
     query.finish();
     query.clear();
-    QMessageBox::information(this, "Note", "Added succesfully!\nClick reload for updated information!");
+    // confirm that user has add player succesfully to the database
+    QMessageBox::information(this, "Note", "Added succesfully!\n"
+                                           "Please reload the player table");
+    // clear the text in the line after user add player successfully
+    ui->shirtLineEdit->clear();
+    ui->appLineEdit->clear();
+    ui->nameLineEdit->clear();
+    ui->assistLineEdit->clear();
+    ui->dribbleLineEdit->clear();
+    ui->passLineEdit->clear();
+    ui->tackleLineEdit->clear();
+    ui->yellowLineEdit->clear();
+    ui->redLineEdit->clear();
+    ui->savePer90LineEdit->clear();
+    ui->cleanSheet->clear();
+    ui->saveRateLineEdit->clear();
+    ui->goalLineEdit->clear();
+
 }
 bool AddPlayer::validateInput() {
     QString shirtNumber = ui->shirtLineEdit->text();
@@ -81,7 +100,7 @@ bool AddPlayer::validateInput() {
     QString savePer90;
     QString saveRate;
 
-    // all lines must be filled
+    // check if all lines has be filled or not
     QStringList stats = {app, goal, assist, yellow, red, passPer90, tacklePer90, dribblePer90};
     if (ui->positionComboBox->currentText() == "GK"){
         cleanSheet = ui->cleanSheet->text();
@@ -89,13 +108,14 @@ bool AddPlayer::validateInput() {
         saveRate = ui->saveRateLineEdit->text();
         stats << cleanSheet<< savePer90 << saveRate;
     }
+    // print the warning if user missing a stat
     for (const QString &stat : stats){
         if (stat.trimmed().isEmpty()){
             QMessageBox::warning(this, "Input error", "All stats fields must be filled");
             return false;
         }
     }
-    // ShirtNumber should be unique and integer only
+    // check if shirt number is a positive integer
     bool ok;
     int shirtNumberValue = shirtNumber.toInt(&ok);
     if (ok && shirtNumberValue > 0) {
@@ -104,7 +124,7 @@ bool AddPlayer::validateInput() {
         QMessageBox::critical(this, "Invalid input", "Shirt number must be a positive integer.");
         return false;
     }
-
+    // check if shirt number is already taken or not
     QSqlDatabase database = QSqlDatabase::database("DB1");
     QSqlQuery query(database);
     query.prepare("select ShirtNumber from Player");
@@ -117,9 +137,13 @@ bool AddPlayer::validateInput() {
             query.clear();
             return false;
         }
+        if (shirtNumberValue > 99){
+            QMessageBox::critical(this, "Invalid input", "Shirt number must be less than 99.");
+            return false;
+        }
     }
 
-    // App, Goal, Assist, CleanSheet must be positive integer numbers
+    // Check if App, Goal, Assist, CleanSheet is all positive integer numbers
     QStringList positiveIntegers = {app, goal, assist, red, yellow};
     if (position == "GK"){
         cleanSheet = ui->cleanSheet->text();
@@ -135,7 +159,7 @@ bool AddPlayer::validateInput() {
         }
     }
 
-    // Other stats just need to be positive numbers
+    // check if other stats is positive numbers
     QStringList positiveNumbers = {passPer90, tacklePer90, dribblePer90};
     if (position == "GK") {
         savePer90 = ui->savePer90LineEdit->text();
@@ -159,7 +183,7 @@ bool AddPlayer::validateInput() {
 
 void AddPlayer::on_positionComboBox_currentTextChanged(const QString &position)
 {
-    // show the specific stat of gk if user choose gk
+    // show the specific stats of gk on the ui if user choose gk
     if (position == "GK"){
         ui->savePer90LineEdit->show();
         ui->cleanSheet->show();

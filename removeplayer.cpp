@@ -65,7 +65,8 @@ void RemovePlayer::on_confirmButton_clicked() {
         query.prepare("DELETE FROM Player WHERE ShirtNumber = :shirtNumber"); //use sql commands
         query.bindValue(":shirtNumber", playerShirtNumber);
         if (query.exec()) {
-            QMessageBox::information(this, "Success", "Player removed successfully");
+            QMessageBox::information(this, "Success", "Player removed successfully\n"
+                                                      "Please reload the table");
             ui->playerNameComboBox->removeItem(ui->playerNameComboBox->currentIndex());
         } else {
             QMessageBox::critical(this, "Error", "Could not remove player: " + query.lastError().text());

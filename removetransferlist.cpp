@@ -65,7 +65,8 @@ void RemoveTransferList::on_confirmButton_clicked()
         query.bindValue(":shirtNumber", playerShirtNumber);
 
         if (query.exec()) {
-            QMessageBox::information(this, "Success", "Player successfully removed from Transfer List");
+            QMessageBox::information(this, "Success", "Player successfully removed from Transfer List\n"
+                                                       "Please reload the table");
             ui -> playerNameComboBox -> removeItem(ui -> playerNameComboBox -> currentIndex());
         }
 
