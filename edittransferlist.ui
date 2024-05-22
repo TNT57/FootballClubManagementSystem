@@ -53,6 +53,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once finished entering details.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -71,6 +74,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Enter a valid transfer fee.</string>
+   </property>
    <property name="text">
     <string>Transfer Fee:</string>
    </property>
@@ -88,6 +94,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Select a name</string>
    </property>
    <property name="text">
     <string>Player: </string>
@@ -117,6 +126,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could choose a player and change the amount of fee for that one player. Remember to click confirm once finished.</string>
    </property>
    <property name="text">
     <string>i</string>

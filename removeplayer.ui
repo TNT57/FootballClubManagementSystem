@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Go to the info label for more details.</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -46,7 +49,7 @@
     <rect>
      <x>50</x>
      <y>30</y>
-     <width>271</width>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
@@ -76,6 +79,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once finished selecting players</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -94,6 +100,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Select a player you want to remove.</string>
    </property>
    <property name="text">
     <string>i</string>

@@ -164,6 +164,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Before simulating a match, make sure to choose a sufficient amount of players for both teams (exactly 11 players).</string>
+   </property>
    <property name="text">
     <string>i</string>
    </property>

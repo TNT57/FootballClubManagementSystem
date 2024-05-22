@@ -25,9 +25,6 @@ AddMatchFixture::AddMatchFixture(QWidget *parent)
                                "border: 1px solid black;"
                                "border-radius: 15px;" // Half of width/height
                                "}");
-
-    // Set the tooltip for the label
-    ui->infoLabel->setToolTip("This is an information label.");
 }
 
 AddMatchFixture::~AddMatchFixture()

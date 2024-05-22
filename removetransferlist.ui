@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Go to info label for more details.</string>
+  </property>
   <widget class="QPushButton" name="confirmButton">
    <property name="geometry">
     <rect>
@@ -26,6 +29,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here once finished selecting player.</string>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -94,6 +100,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could select a player to remove a player from the transfer list.</string>
    </property>
    <property name="text">
     <string>i</string>

@@ -83,6 +83,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>In this widget, you could tick and select players on your choice in order to maximize the result.</string>
+   </property>
    <property name="text">
     <string>i</string>
    </property>

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Check out info label for more information.</string>
+  </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -132,6 +135,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once finished entering details.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -160,6 +166,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you can remove a match with the correct match details entered. </string>
    </property>
    <property name="text">
     <string>i</string>

@@ -16,11 +16,16 @@
   <widget class="QPushButton" name="playerButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>51</x>
      <y>110</y>
      <width>111</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Player</string>
@@ -29,11 +34,16 @@
   <widget class="QPushButton" name="staffButton">
    <property name="geometry">
     <rect>
-     <x>229</x>
+     <x>250</x>
      <y>110</y>
      <width>111</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Staff</string>
@@ -42,11 +52,16 @@
   <widget class="QPushButton" name="transferListButton">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>200</y>
+     <x>140</x>
+     <y>180</y>
      <width>131</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Transfer List</string>
@@ -55,11 +70,17 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>110</x>
      <y>40</y>
-     <width>161</width>
+     <width>291</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Player &amp; Staff Profile Editor</string>
