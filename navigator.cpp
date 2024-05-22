@@ -94,8 +94,10 @@ Navigator::Navigator(QWidget *parent)
 
     // Set the stylesheet to add a circular border around the label
     ui->infoLabel->setStyleSheet("QLabel {"
+                                 "color: black;"
                                  "border: 1px solid black;"
                                  "border-radius: 15px;" // Half of width/height
+                                 "border-color: beige;"
                                  "}");
 
 

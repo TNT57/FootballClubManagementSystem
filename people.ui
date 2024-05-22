@@ -90,6 +90,7 @@
    <property name="font">
     <font>
      <pointsize>17</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
