@@ -9,8 +9,8 @@ Navigator::Navigator(QWidget *parent)
     ui->setupUi(this);
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    //database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
-    database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
+    database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
+    //database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
     //database.setDatabaseName("/Users/tom/PlayerManagement.db");
 
     // check the database is working or not
@@ -87,7 +87,12 @@ Navigator::Navigator(QWidget *parent)
 
 
     // Set the tooltip for the label
-    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
+    ui->infoLabel->setToolTip("'i' label support info: \n"
+                              "Welcome to our project Football Club Mangement System! \nA system that stores a club's team members including players and staves"
+                              " where you can add delete and even edit people's information.\n"
+                              "Another interesting thing of this program is that you can do Match Simulation to get results by managing players.\n"
+                              "So dive right in and explore the program.\n"
+                              "Remember there would always be support through this 'i' label.");
 
     // Set the size of the label to be a square
     ui->infoLabel->setFixedSize(30, 30);

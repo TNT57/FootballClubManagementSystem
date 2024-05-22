@@ -80,6 +80,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>This is the final score of the match based on the starting players statistics.</string>
+   </property>
    <property name="text">
     <string>i</string>
    </property>

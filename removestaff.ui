@@ -18,7 +18,7 @@
     <rect>
      <x>50</x>
      <y>20</y>
-     <width>281</width>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
@@ -76,6 +76,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once finished selecting staff.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -94,6 +97,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you can select desired staff name to remove from the team.</string>
    </property>
    <property name="text">
     <string>i</string>

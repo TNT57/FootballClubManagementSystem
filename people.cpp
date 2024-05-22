@@ -68,7 +68,9 @@ People::People(QWidget *parent)
 
 
     // Set the tooltip for the label
-    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
+    ui->infoLabel->setToolTip("Player: show the statistics of all the players.\n"
+                              "Staff: see all the information of staff in the team.\n"
+                              "Transferlist: see the players on the team's transfer list.");
 
     // Set the size of the label to be a square
     ui->infoLabel->setFixedSize(30, 30);

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Go to the label info for more details.</string>
+  </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
@@ -55,6 +58,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here to get the most updated information.</string>
+   </property>
    <property name="text">
     <string>Reload</string>
    </property>
@@ -73,6 +79,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>You could view current starting list and could mange players from this table.</string>
    </property>
    <property name="text">
     <string>i</string>

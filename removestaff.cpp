@@ -13,9 +13,6 @@ RemoveStaff::RemoveStaff(QWidget *parent)
     ui->setupUi(this);
     populateStaff();
 
-    // Set the tooltip for the label
-    ui->infoLabel->setToolTip("Click reload to see the most updated statistic of the team!");
-
     // Set the size of the label to be a square
     ui->infoLabel->setFixedSize(30, 30);
 

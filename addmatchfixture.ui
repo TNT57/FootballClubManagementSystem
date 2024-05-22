@@ -27,6 +27,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once you finished putting in the details.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -160,6 +163,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you can enter details to setup new match for the team.</string>
    </property>
    <property name="text">
     <string>i</string>

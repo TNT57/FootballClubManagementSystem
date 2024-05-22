@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="toolTip">
+   <string>Go to label info for more details.</string>
+  </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
@@ -139,6 +142,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you have a variety of options to manage team members of the club.</string>
    </property>
    <property name="text">
     <string>i</string>

@@ -24,9 +24,6 @@ AddPlayer::AddPlayer(QWidget *parent)
                                  "border-radius: 15px;" // Half of width/height
                                  "}");
 
-    // Set the tooltip for the label
-    ui->infoLabel->setToolTip("This is an information label.");
-
 }
 
 AddPlayer::~AddPlayer()

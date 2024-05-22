@@ -47,6 +47,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Click here once finished entering details.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -88,6 +91,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Enter annual salary.</string>
+   </property>
    <property name="text">
     <string>Salary</string>
    </property>
@@ -116,6 +122,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Enter name</string>
+   </property>
    <property name="text">
     <string>Name</string>
    </property>
@@ -133,6 +142,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Choose desired ID</string>
    </property>
    <property name="text">
     <string>Staff id</string>
@@ -152,6 +164,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Enter a role.</string>
+   </property>
    <property name="text">
     <string>Role</string>
    </property>
@@ -169,6 +184,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Enter DOB in correct format</string>
    </property>
    <property name="text">
     <string>Date of birth</string>
@@ -208,6 +226,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Optional</string>
+   </property>
    <property name="text">
     <string>New ID</string>
    </property>
@@ -240,11 +261,27 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>In this widget, you could enter new information for the new staff.</string>
+   </property>
    <property name="text">
     <string>i</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>180</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>(dd/mm/yyyy)</string>
    </property>
   </widget>
  </widget>

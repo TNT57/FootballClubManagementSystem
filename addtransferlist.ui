@@ -61,6 +61,14 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>Click here once finished entering details.</string>
+   </property>
    <property name="text">
     <string>Confirm</string>
    </property>
@@ -117,6 +125,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could choose a player and enter a specific amount of money to transfer them into the transfer list.</string>
    </property>
    <property name="text">
     <string>i</string>

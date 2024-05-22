@@ -256,6 +256,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Validate shirt number is from 1 to 99.</string>
+   </property>
    <property name="text">
     <string>Shirt Number</string>
    </property>
@@ -292,6 +295,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Total amount of match participated.</string>
+   </property>
    <property name="text">
     <string>Appearances</string>
    </property>
@@ -309,6 +315,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Number of goals</string>
    </property>
    <property name="text">
     <string>Goals</string>
@@ -328,6 +337,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Number of assists</string>
+   </property>
    <property name="text">
     <string>Assists</string>
    </property>
@@ -345,6 +357,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Pass completed successfully per 90 minutes</string>
    </property>
    <property name="text">
     <string>Pass completed per 90</string>
@@ -364,6 +379,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Tackle completed successfully per 90 minutes</string>
+   </property>
    <property name="text">
     <string>Tackle completed per 90</string>
    </property>
@@ -381,6 +399,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Dribble completed successfully per 90 minutes</string>
    </property>
    <property name="text">
     <string>Dribble completed per 90</string>
@@ -400,6 +421,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Number of yellow cards</string>
+   </property>
    <property name="text">
     <string>Yellow Card</string>
    </property>
@@ -417,6 +441,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Number of red cards</string>
    </property>
    <property name="text">
     <string>Red Card</string>
@@ -436,6 +463,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Total saves per 90 minutes</string>
+   </property>
    <property name="text">
     <string>Save performed per 90</string>
    </property>
@@ -454,6 +484,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Total match without conceding a goal</string>
+   </property>
    <property name="text">
     <string>Number of clean sheet</string>
    </property>
@@ -471,6 +504,9 @@
     <font>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>Save percentage in general</string>
    </property>
    <property name="text">
     <string>Save success percentage</string>
@@ -545,6 +581,9 @@
      <pointsize>17</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="toolTip">
+    <string>In this widget, you could add validate information for a new player of the team.</string>
    </property>
    <property name="text">
     <string>i</string>
