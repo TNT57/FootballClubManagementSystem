@@ -43,7 +43,16 @@ void EditStaff::on_confirmButton_clicked() {
         // update the new information of staff into the database
         query.prepare("UPDATE Staff SET StaffID = :newStaffId, Name = :name, DOB = :dob, Role = :role, Salary = :salary WHERE StaffID = :oldStaffId");
         query.bindValue(":oldStaffId", ui -> staffIdComboBox -> currentText().toInt());
-        query.bindValue(":newStaffId", ui -> newStaffIdLineEdit -> text().isEmpty() ? ui -> staffIdComboBox -> currentText().toInt() : ui -> newStaffIdLineEdit -> text().toInt());
+        //query.bindValue(":newStaffId", ui -> newStaffIdLineEdit -> text().isEmpty() ? ui -> staffIdComboBox -> currentText().toInt() : ui -> newStaffIdLineEdit -> text().toInt());
+
+        int newStaffId;
+        if (ui -> newStaffIdLineEdit -> text().isEmpty()) {
+            newStaffId = ui -> staffIdComboBox -> currentText().toInt();
+        } else {
+            newStaffId = ui -> newStaffIdLineEdit -> text().toInt();
+        }
+
+        query.bindValue(":newStaffId", newStaffId);
         query.bindValue(":name", ui -> nameLineEdit -> text());
         query.bindValue(":dob", ui -> dobLineEdit -> text());
         query.bindValue(":role", ui -> roleLineEdit -> text());
@@ -51,8 +60,11 @@ void EditStaff::on_confirmButton_clicked() {
 
         // check if query is executed
         if (query.exec()) {
+            if (!ui -> newStaffIdLineEdit -> text().isEmpty()) {
+                ui -> staffIdComboBox -> setItemText(ui -> staffIdComboBox -> currentIndex(), ui -> newStaffIdLineEdit -> text());
+            }
+
             QMessageBox::information(this, "Update successful", "Staff data updated successfully");
-            ui -> staffIdComboBox -> setItemText(ui -> staffIdComboBox -> currentIndex(), ui -> newStaffIdLineEdit -> text());
         }
 
         else {

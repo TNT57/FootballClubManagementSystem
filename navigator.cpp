@@ -26,11 +26,12 @@ Navigator::Navigator(QWidget *parent): QMainWindow(parent), ui(new Ui::Navigator
     ptrTeamStatistics = new TeamStatistics();
 
     //Set up background image for navigator
-    QPixmap navigatorBackgroundImage("E:\\Workspace\\FootballClubManagementSystem\\images\\wallpaperflare.com_wallpaper.jpg");
+    QPixmap navigatorBackgroundImage("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\images\\wallpaperflare.com_wallpaper.jpg");
+    //QPixmap navigatorBackgroundImage("E:\\Workspace\\FootballClubManagementSystem\\images\\wallpaperflare.com_wallpaper.jpg");
+
     int w = ui -> navigatorBackgroundImg -> width();
     int h = ui -> navigatorBackgroundImg -> height();
     ui -> navigatorBackgroundImg -> setPixmap(navigatorBackgroundImage.scaled(w,h,Qt::KeepAspectRatioByExpanding));
-
 
     // Change the button color to light blue with a stylesheet
     ui -> peopleButton -> setStyleSheet("QPushButton {"

@@ -145,7 +145,9 @@ void EditPlayer::on_confirmButton_clicked() {
 
         else {
             // Update the combo box
-            ui -> shirtNumberComboBox -> setItemText(ui -> shirtNumberComboBox -> currentIndex(), ui -> newShirtNumberLineEdit -> text());
+            if (!ui -> newShirtNumberLineEdit -> text().isEmpty()) {
+                ui -> shirtNumberComboBox -> setItemText(ui -> shirtNumberComboBox -> currentIndex(), ui -> newShirtNumberLineEdit -> text());
+            }
         }
 
         if (ui -> positionComboBox -> currentText() != "GK") {

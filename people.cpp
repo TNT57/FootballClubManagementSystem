@@ -11,7 +11,9 @@ People::People(QWidget *parent): QWidget(parent), ui(new Ui::People) {
     ptrTransferList = new TransferList();
 
     // Add icon to playerButton
-    QIcon playerIcon("E:\\Workspace\\FootballClubManagementSystem\\images\\meowPlayer-removebg-preview.png"); // Replace with your icon path
+    QIcon playerIcon("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\images\\meowPlayer-removebg-preview.png");
+    // QIcon playerIcon("E:\\Workspace\\FootballClubManagementSystem\\images\\meowPlayer-removebg-preview.png"); // Replace with your icon path
+
     ui -> playerButton -> setIcon(playerIcon);
     ui -> playerButton -> setIconSize(QSize(50, 50)); // Set the desired icon size
     ui -> playerButton -> setStyleSheet("QPushButton {"
@@ -25,8 +27,9 @@ People::People(QWidget *parent): QWidget(parent), ui(new Ui::People) {
                                         "}");
 
     // Add icon to staffButton
-    //QIcon staffIcon("C:\\Users\\trung\\Downloads\\sportStaffImg.png"); // Replace with your icon path
-    QIcon staffIcon("E:\\Workspace\\FootballClubManagementSystem\\images\\sportStaffImg.png");
+    // Replace with your icon path
+    QIcon staffIcon("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\images\\sportStaffImg.png");
+    // QIcon staffIcon("E:\\Workspace\\FootballClubManagementSystem\\images\\sportStaffImg.png");
 
     ui -> staffButton -> setIcon(staffIcon);
     ui -> staffButton -> setIconSize(QSize(50, 50)); // Set the desired icon size
@@ -45,8 +48,9 @@ People::People(QWidget *parent): QWidget(parent), ui(new Ui::People) {
     ui -> label -> setStyleSheet("QLabel { color : white; }");
 
     //Change background image to blurred
-    //QPixmap backgroundImg("images/imageBlur.png");
-    QPixmap backgroundImg("E:\\Workspace\\FootballClubManagementSystem\\images\\imageBlur.png");
+    QPixmap backgroundImg("D:\\University of Adelaide\\COMP SCI 1102\\FootballClubManagementSystem\\images\\imageBlur.png");
+    // QPixmap backgroundImg("E:\\Workspace\\FootballClubManagementSystem\\images\\imageBlur.png");
+
     int w = ui -> backgroundImg -> width();
     int h = ui -> backgroundImg -> height();
     ui -> backgroundImg -> setPixmap(backgroundImg.scaled(w,h,Qt::KeepAspectRatioByExpanding));
