@@ -7,8 +7,8 @@ Navigator::Navigator(QWidget *parent): QMainWindow(parent), ui(new Ui::Navigator
 
     // initialise database
     database = QSqlDatabase::addDatabase("QSQLITE", "DB1");
-    //database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
-    database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
+    database.setDatabaseName("C:\\Users\\trung\\Downloads\\PlayerManagement.db");
+    //database.setDatabaseName("D:\\University of Adelaide\\COMP SCI 1102\\PlayerManagement.db");
     //database.setDatabaseName("/Users/tom/PlayerManagement.db");
 
     // check the database is working or not

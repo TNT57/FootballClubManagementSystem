@@ -51,7 +51,7 @@ void EditStaff::on_confirmButton_clicked() {
 
         // check if query is executed
         if (query.exec()) {
-            QMessageBox::information(this, "Update successful", "Staff data updated successfully");
+            QMessageBox::information(this, "Update successful", "Staff data updated successfully.\nPlease click reload for updated information.");
             ui -> staffIdComboBox -> setItemText(ui -> staffIdComboBox -> currentIndex(), ui -> newStaffIdLineEdit -> text());
         }
 
