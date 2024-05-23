@@ -202,9 +202,9 @@
   <widget class="QLineEdit" name="titleLineEdit">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>10</y>
-     <width>211</width>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
@@ -214,7 +214,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Enter new staff information</string>
+    <string> Enter new staff information</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
